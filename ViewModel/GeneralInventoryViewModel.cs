@@ -21,21 +21,31 @@ namespace Food_Storage_Inventory.ViewModel
 
 		public ICommand UpdateItemCommand => new DelegateCommand<object>(OnUpdateItemExecuted);
 		public ICommand SelectedItemChangedCommand => new DelegateCommand<object>(OnSelectedItemChanged);
+		public ICommand SaveCommand => new DelegateCommand<object>(OnSaveExecuted);
+		public ICommand BackUpCommand => new DelegateCommand<object>(OnBackupExecuted);
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
+		private void OnSaveExecuted(object context) => FoodItemRepository.Instance.SaveToFile();
+
+		private void OnBackupExecuted(object context) => FoodItemRepository.Instance.BackupFile();
+
 		private void OnNewItemExecuted(object context)
 		{
-			var results = FoodItemRepository.Instance.FoodItems.Where(x => x.Name == NewItemName);
-			if (results.Any())
+			if (FoodItemRepository.Instance.FoodItems.Any())
 			{
-				ErrorText = "Item Already Exists!";
+				var results = FoodItemRepository.Instance.FoodItems.Where(x => x.Name == NewItemName);
+				if (results.Any())
+				{
+					ErrorText = "Item Already Exists!";
+					PropertyChanged(this, new PropertyChangedEventArgs(nameof(ErrorText)));
+					return;
+				}
+
+				ErrorText = string.Empty;
 				PropertyChanged(this, new PropertyChangedEventArgs(nameof(ErrorText)));
-				return;
 			}
 
-			ErrorText = string.Empty;
-			PropertyChanged(this, new PropertyChangedEventArgs(nameof(ErrorText)));
 			FoodItemRepository.Instance.FoodItems.Add(new FoodItem() { Name = NewItemName, Quantity = int.Parse(NewItemQuantity), ContainerDescription = NewItemContainerDescription });
 		}
 

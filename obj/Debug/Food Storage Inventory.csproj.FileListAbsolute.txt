@@ -49,3 +49,8 @@ D:\Repositories\FoodStorageInventory\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 D:\Repositories\FoodStorageInventory\bin\Debug\Microsoft.Xaml.Behaviors.xml
 D:\Repositories\FoodStorageInventory\bin\Debug\Prism.Wpf.pdb
 D:\Repositories\FoodStorageInventory\bin\Debug\Prism.Wpf.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\Json.Net.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\log4net.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\Newtonsoft.Json.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\log4net.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\Newtonsoft.Json.xml

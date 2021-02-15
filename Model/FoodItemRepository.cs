@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.IO;
-
-//using Json.Net;
-using Newtonsoft.Json;
 using log4net;
+using Newtonsoft.Json;
 
 namespace Food_Storage_Inventory.Model
 {
@@ -19,11 +17,7 @@ namespace Food_Storage_Inventory.Model
 
 		private FoodItemRepository()
 		{
-			FoodItems = new ObservableCollection<FoodItem>()
-			{
-				new FoodItem(){Name = "Blackberry Jam", Quantity = 5, ContainerDescription = "Pint Jars"},
-				new FoodItem(){Name = "Peaches Jam", Quantity = 3, ContainerDescription = "Quart Jars"},
-			};
+			_ = ReadFromFile();
 		}
 
 		public ObservableCollection<FoodItem> FoodItems { get; set; }
@@ -50,10 +44,28 @@ namespace Food_Storage_Inventory.Model
 
 		public bool ReadFromFile()
 		{
+			try
+			{
+				using (StreamReader file = new StreamReader(INVENTORY_FILE_PATH))
+				{
+					var json = file.ReadToEnd();
+
+					FoodItems = JsonConvert.DeserializeObject<ObservableCollection<FoodItem>>(json);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				_logger.Error("Failed to read JSON file.  Creating empty collection.", ex);
+				FoodItems = new ObservableCollection<FoodItem>();
+				return false;
+			}
 		}
 
 		public bool BackupFile()
 		{
+			return false;
 		}
 	}
 }
