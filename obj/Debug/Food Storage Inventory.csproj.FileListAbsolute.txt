@@ -1,0 +1,45 @@
+D:\Repositories\FoodStorageInventory\bin\Debug\Food Storage Inventory.exe.config
+D:\Repositories\FoodStorageInventory\bin\Debug\Food Storage Inventory.exe
+D:\Repositories\FoodStorageInventory\bin\Debug\Food Storage Inventory.pdb
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csprojAssemblyReference.cache
+D:\Repositories\FoodStorageInventory\obj\Debug\MainWindow.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\App.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory_MarkupCompile.cache
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory_MarkupCompile.lref
+D:\Repositories\FoodStorageInventory\obj\Debug\MainWindow.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.g.resources
+D:\Repositories\FoodStorageInventory\obj\Debug\Food_Storage_Inventory.Properties.Resources.resources
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csproj.GenerateResource.cache
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csproj.CoreCompileInputs.cache
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.exe
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.pdb
+D:\Repositories\FoodStorageInventory\bin\Debug\Xceed.Wpf.AvalonDock.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csproj.CopyComplete
+D:\Repositories\FoodStorageInventory\obj\Debug\NewItemPopup.g.cs
+D:\Repositories\FoodStorageInventory\bin\Debug\MaterialDesignColors.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\MaterialDesignColors.pdb
+D:\Repositories\FoodStorageInventory\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Repositories\FoodStorageInventory\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Repositories\FoodStorageInventory\obj\Debug\App.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\NewItemPopup.baml
+D:\Repositories\FoodStorageInventory\bin\Debug\Prism.dll
+D:\Repositories\FoodStorageInventory\bin\Debug\Prism.pdb
+D:\Repositories\FoodStorageInventory\bin\Debug\Prism.xml
