@@ -11,7 +11,8 @@ namespace Food_Storage_Inventory.Model
 		private static readonly Lazy<FoodItemRepository> lazy = new Lazy<FoodItemRepository>(() => new FoodItemRepository());
 		private static readonly ILog _logger = LogManager.GetLogger(typeof(FoodItemRepository));
 
-		private const string INVENTORY_FILE_PATH = @"D:\drans\Documents\Food Storage Inventory\inventory.txt";
+		private const string INVENTORY_FILE_PATH = @"C:\Program Files\Food Storage Inventory\inventory.txt";
+		private const string INVENTORY_DIRECTORY = @"C:\Program Files\Food Storage Inventory";
 
 		public static FoodItemRepository Instance => lazy.Value;
 
@@ -26,6 +27,11 @@ namespace Food_Storage_Inventory.Model
 		{
 			try
 			{
+				if (!Directory.Exists(INVENTORY_DIRECTORY))
+				{
+					Directory.CreateDirectory(INVENTORY_DIRECTORY);
+				}
+
 				using (StreamWriter file = File.CreateText(INVENTORY_FILE_PATH))
 				{
 					JsonSerializer jsonSerializer = new JsonSerializer();
