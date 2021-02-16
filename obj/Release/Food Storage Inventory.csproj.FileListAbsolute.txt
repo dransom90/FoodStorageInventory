@@ -1,0 +1,18 @@
+D:\Repositories\FoodStorageInventory\bin\Release\Food Storage Inventory.exe.config
+D:\Repositories\FoodStorageInventory\bin\Release\Food Storage Inventory.exe.manifest
+D:\Repositories\FoodStorageInventory\bin\Release\Food Storage Inventory.application
+D:\Repositories\FoodStorageInventory\bin\Release\Food Storage Inventory.exe
+D:\Repositories\FoodStorageInventory\bin\Release\Food Storage Inventory.pdb
+D:\Repositories\FoodStorageInventory\obj\Release\MainWindow.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\App.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory_MarkupCompile.cache
+D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory_MarkupCompile.lref
+D:\Repositories\FoodStorageInventory\obj\Release\MainWindow.baml
+D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.g.resources
+D:\Repositories\FoodStorageInventory\obj\Release\Food_Storage_Inventory.Properties.Resources.resources
+D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.csproj.GenerateResource.cache
+D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.csproj.CoreCompileInputs.cache
+D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.exe.manifest
+D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.application
+D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.exe
+D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.pdb

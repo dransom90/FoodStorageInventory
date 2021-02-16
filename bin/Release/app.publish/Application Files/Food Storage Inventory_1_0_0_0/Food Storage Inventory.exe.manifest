@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Food Storage Inventory.exe" version="1.0.0.0" publicKeyToken="be14998ee65efee1" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Food Storage Inventory" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Food Storage Inventory.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Food Storage Inventory.exe" size="8640">
+      <assemblyIdentity name="Food Storage Inventory" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>hiDsOSh6IGCV7meCq59LQV4EenxxaRuKew/EJBkN++U=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Food Storage Inventory.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=USSZHENGHE\drans" issuerKeyHash="43171d488a20174a7165936eb9685a7425688579" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>njW2m/GYWZZKJjpjz4IU5kO21AaLMoPppG5AuTE7CZg=</DigestValue></Reference></SignedInfo><SignatureValue>ViWmL+snadFCI+fW9mMRWrbGheaYKtQMbFy287g5OOQ0BjG5Yn2IckJHCB90wMXC8egAXiKJw/dnnsI0isZit/EZ00oYBpjx4Lomm1sjI5/DF78JTc0SHNYD9+WnqJjiwqxEdcnjObKRkdF1d8vJzOWjIxb2uoBdFNssZXvaZEM=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>mK8EJa9RwaDm7815dGRvLbdWqMNyQ6BL+Uo+Li/go+3Vc108nfvoXkblCFEODBGjM1TSpCZHOLOPMtB0+iSByW3ofR3scpXeGyyZwAbVHYNlmkauMIGIc2aFvP2pRqynySioOniAqtfMx8G2gP3fXO5z6x0Pt+kH2zssm56/MSU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="98093b31b9406ea4e983328b06d4b643e61482cf633a264a965998f19bb6359e" Description="" Url=""><as:assemblyIdentity name="Food Storage Inventory.exe" version="1.0.0.0" publicKeyToken="be14998ee65efee1" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=USSZHENGHE\drans</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>7ZlH8Z+Ks7ZZUVQNWQhiVFR5R5VZ8U4XXfWSXrMqul4=</DigestValue></Reference></SignedInfo><SignatureValue>WT2OfZUDqtP2bnnwuAClhAL3nauoNeAO8gpM/ysVBk4umgd/b0qeb0ZiDr2bj8F7EqTJP3uiHWW5yHCR55bMkcJGRLsAwKIuLTKmuLc70ONCYbZuw6jZJjUH+52v4MuN3aJuP2NSKATxHgLDh9cI1TQK2p87IUaMnDbwMDyJ+uI=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>mK8EJa9RwaDm7815dGRvLbdWqMNyQ6BL+Uo+Li/go+3Vc108nfvoXkblCFEODBGjM1TSpCZHOLOPMtB0+iSByW3ofR3scpXeGyyZwAbVHYNlmkauMIGIc2aFvP2pRqynySioOniAqtfMx8G2gP3fXO5z6x0Pt+kH2zssm56/MSU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQFXI5cTelLqVJ46lAOO7l7DANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDHiAAVQBTAFMAWgBIAEUATgBHAEgARQBcAGQAcgBhAG4AczAeFw0yMTAyMTYwMDEwMzdaFw0yMjAyMTYwNjEwMzdaMCsxKTAnBgNVBAMeIABVAFMAUwBaAEgARQBOAEcASABFAFwAZAByAGEAbgBzMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCYrwQlr1HBoObvzXl0ZG8tt1aow3JDoEv5Sj4uL+Cj7dVzXTyd++heRuUIUQ4MEaMzVNKkJkc4s48y0HT6JIHJbeh9Hexyld4bLJnABtUdg2WaRq4wgYhzZoW8/alGrKfJKKg6eICq18zHwbaA/d9c7nPrHQ+36QfbOyybnr8xJQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBACMx5c1EWJtLmZYQkmppLtzE8qAXz9GUlil/UicmriKs9XqUCIHVFGBDg+MpJtioH0D1gox0SW80UDcBD9j108YhzpMlM/CxBqpM41Sc+Bo37FNoxm8VRw/pHFxRVILQMjqkUlDHybYoKtbtX//nrhy4PG6U8TweAJrMb8Xd8cpy</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
