@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Repositories\FoodStorageInventory\Food Storage Inventory\obj\Debug\
+D:\Repositories\FoodStorageInventory\obj\Debug\
 Food_Storage_Inventory
 none
 false
 DEBUG;TRACE
-D:\Repositories\FoodStorageInventory\Food Storage Inventory\App.xaml
-11151548125
+D:\Repositories\FoodStorageInventory\App.xaml
+2-1312428505
 
-61434861427
-13-1505183044
-MainWindow.xaml;
+10-311241511
+291343533060
+MainWindow.xaml;NewItemPopup.xaml;
 
 True
 
