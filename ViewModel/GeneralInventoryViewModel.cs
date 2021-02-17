@@ -46,7 +46,7 @@ namespace Food_Storage_Inventory.ViewModel
 				PropertyChanged(this, new PropertyChangedEventArgs(nameof(ErrorText)));
 			}
 
-			FoodItemRepository.Instance.FoodItems.Add(new FoodItem() { Name = NewItemName, Quantity = int.Parse(NewItemQuantity), ContainerDescription = NewItemContainerDescription });
+			FoodItemRepository.Instance.FoodItems.Add(new FoodItem() { Name = NewItemName, Quantity = int.Parse(NewItemQuantity) });
 		}
 
 		private void OnSelectedItemChanged(object context)
