@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.IO;
 using log4net;
 using Newtonsoft.Json;
@@ -19,7 +20,10 @@ namespace Food_Storage_Inventory.Model
 		private FoodItemRepository()
 		{
 			_ = ReadFromFile();
+			FoodItems.CollectionChanged += OnFoodItemsCollectionChanged;
 		}
+
+		private void OnFoodItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e) => SaveToFile();
 
 		public ObservableCollection<FoodItem> FoodItems { get; set; }
 
