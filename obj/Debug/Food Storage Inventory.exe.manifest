@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Food Storage Inventory.exe" size="4093376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Food Storage Inventory.exe" size="4096960">
       <assemblyIdentity name="Food Storage Inventory" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OoCDrzG4r10RMlSQSy2K0WkiRE8rw1b+H8ndVvvcUBA=</dsig:DigestValue>
+        <dsig:DigestValue>Bu8SoXoN0F0kLJ91ItMt7dqa8lafWuXuGgod03mMXY0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
