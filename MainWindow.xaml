@@ -35,7 +35,7 @@
 		<Menu Grid.Row="0" IsMainMenu="False">
 			<MenuItem Header="_File">
 				<MenuItem Header="S_ave" Command="{Binding SaveCommand}" />
-				<MenuItem Header="B_ack Up" Command="{Binding BackUpCommand}" />
+				<MenuItem Header="B_ack Up" Command="{Binding BackUpCommand}" IsEnabled="False" />
 				<MenuItem Header="E_xit" Command="{Binding ExitProgramCommand}" />
 			</MenuItem>
 		</Menu>
