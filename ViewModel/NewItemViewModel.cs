@@ -1,20 +1,46 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using Food_Storage_Inventory.Model;
+using log4net;
+using Newtonsoft.Json;
 using Prism.Commands;
 
 namespace Food_Storage_Inventory.ViewModel
 {
 	public class NewItemViewModel : INotifyPropertyChanged
 	{
+		private const string CONTAINER_FILE_PATH = @"C:\Program Files\Food Storage Inventory\containers.txt";
+		private const string CONTAINER_DIRECTORY = @"C:\Program Files\Food Storage Inventory";
+		private const string DEFAULT_CONTAINER = "Create New Container";
+
 		private string _selectedContainer;
+		private int _selectedIndex;
+		private static readonly ILog _logger = LogManager.GetLogger(typeof(NewItemViewModel));
 
 		public string FeedbackText { get; set; } = string.Empty;
 		public string NewItemName { get; set; }
 		public string NewItemQuantity { get; set; }
 		public bool InputDialogVisible { get; set; }
+
+		public int SelectedIndex
+		{
+			get => _selectedIndex;
+			set
+			{
+				if (_selectedIndex == value)
+				{
+					return;
+				}
+
+				_selectedIndex = value;
+				NotifyPropertyChanged(nameof(SelectedIndex));
+			}
+		}
 
 		public string SelectedContainer
 		{
@@ -29,12 +55,12 @@ namespace Food_Storage_Inventory.ViewModel
 				if (value == "Create New Container")
 				{
 					InputDialogVisible = true;
-					PropertyChanged(this, new PropertyChangedEventArgs(nameof(InputDialogVisible)));
+					NotifyPropertyChanged(nameof(InputDialogVisible));
 					return;
 				}
 
 				_selectedContainer = value;
-				PropertyChanged(this, new PropertyChangedEventArgs(nameof(SelectedContainer)));
+				NotifyPropertyChanged(nameof(SelectedContainer));
 			}
 		}
 
@@ -43,18 +69,37 @@ namespace Food_Storage_Inventory.ViewModel
 		public ICommand AddNewItemCommand => new DelegateCommand<object>(OnNewItemExecuted);
 		public ICommand AddNewContainerCommand => new DelegateCommand<object>(OnNewContainerAdded);
 		public ICommand CancelNewContainerCommand => new DelegateCommand<object>(OnCancelNewContainer);
+		public ICommand CancelNewItemCommand => new DelegateCommand<object>(OnCancelNewItem);
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public NewItemViewModel()
 		{
-			AvailableContainers = new ObservableCollection<string>() { "Create New Container" };    // TODO:	Read From File
+			_ = ReadFromFile();
+		}
+
+		private void CloseWindow(Window window)
+		{
+			if (window != null)
+			{
+				window.Close();
+			}
+		}
+
+		private void OnCancelNewItem(object context)
+		{
+			if (context is Window currentWindow)
+			{
+				CloseWindow(currentWindow);
+			}
 		}
 
 		private void OnCancelNewContainer(object context)
 		{
 			InputDialogVisible = false;
-			PropertyChanged(this, new PropertyChangedEventArgs(nameof(InputDialogVisible)));
+			SelectedIndex = -1;
+			NotifyPropertyChanged(nameof(InputDialogVisible));
+			NotifyPropertyChanged(nameof(InputDialogVisible));
 		}
 
 		private void OnNewContainerAdded(object context)
@@ -63,11 +108,13 @@ namespace Food_Storage_Inventory.ViewModel
 			{
 				AvailableContainers.Add(newContainer);
 				InputDialogVisible = false;
-				PropertyChanged(this, new PropertyChangedEventArgs(nameof(InputDialogVisible)));
-				PropertyChanged(this, new PropertyChangedEventArgs(nameof(AvailableContainers)));
+				SelectedContainer = newContainer;
+				NotifyPropertyChanged(nameof(InputDialogVisible));
+				NotifyPropertyChanged(nameof(AvailableContainers));
+				NotifyPropertyChanged(nameof(SelectedContainer));
 			}
 
-			// TODO:	Save To File
+			SaveToFile();
 		}
 
 		private void OnNewItemExecuted(object context)
@@ -78,15 +125,66 @@ namespace Food_Storage_Inventory.ViewModel
 				if (results.Any())
 				{
 					FeedbackText = "Item Already Exists!";
-					PropertyChanged(this, new PropertyChangedEventArgs(nameof(FeedbackText)));
+					NotifyPropertyChanged(nameof(FeedbackText));
 					return;
 				}
 
 				FeedbackText = "Item Added Successfully";
-				PropertyChanged(this, new PropertyChangedEventArgs(nameof(FeedbackText)));
+				NotifyPropertyChanged(nameof(FeedbackText));
 			}
 
 			FoodItemRepository.Instance.FoodItems.Add(new FoodItem(NewItemName, int.Parse(NewItemQuantity), SelectedContainer));
+		}
+
+		public bool ReadFromFile()
+		{
+			try
+			{
+				using (StreamReader file = new StreamReader(CONTAINER_FILE_PATH))
+				{
+					var json = file.ReadToEnd();
+
+					AvailableContainers = JsonConvert.DeserializeObject<ObservableCollection<string>>(json);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				_logger.Error("Failed to read JSON file.  Creating empty collection.", ex);
+				AvailableContainers = new ObservableCollection<string>() { DEFAULT_CONTAINER };
+				return false;
+			}
+		}
+
+		public bool SaveToFile()
+		{
+			try
+			{
+				if (!Directory.Exists(CONTAINER_DIRECTORY))
+				{
+					Directory.CreateDirectory(CONTAINER_DIRECTORY);
+				}
+
+				using (StreamWriter file = File.CreateText(CONTAINER_FILE_PATH))
+				{
+					JsonSerializer jsonSerializer = new JsonSerializer();
+					var json = JsonConvert.SerializeObject(AvailableContainers);
+					file.Write(json);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				_logger.Error("Failed to write JSON file", ex);
+				return false;
+			}
+		}
+
+		private void NotifyPropertyChanged(string propertyName)
+		{
+			PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
 	}
 }
