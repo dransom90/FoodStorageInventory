@@ -9,7 +9,7 @@
 		xmlns:number="http://schemas.xceed.com/wpf/xaml/toolkit"
 		xmlns:ie="http://schemas.microsoft.com/xaml/behaviors"
 		mc:Ignorable="d"
-		Title="MainWindow" Height="450" Width="800">
+		Title="Food Storage Inventory" Height="450" Width="800">
 	<Window.DataContext>
 		<VM:GeneralInventoryViewModel />
 	</Window.DataContext>

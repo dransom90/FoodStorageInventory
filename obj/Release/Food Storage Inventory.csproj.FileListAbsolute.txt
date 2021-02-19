@@ -1,6 +1,4 @@
 D:\Repositories\FoodStorageInventory\bin\Release\Food Storage Inventory.exe.config
-D:\Repositories\FoodStorageInventory\bin\Release\Food Storage Inventory.exe.manifest
-D:\Repositories\FoodStorageInventory\bin\Release\Food Storage Inventory.application
 D:\Repositories\FoodStorageInventory\bin\Release\Food Storage Inventory.exe
 D:\Repositories\FoodStorageInventory\bin\Release\Food Storage Inventory.pdb
 D:\Repositories\FoodStorageInventory\bin\Release\log4net.xml
@@ -25,8 +23,6 @@ D:\Repositories\FoodStorageInventory\obj\Release\Food_Storage_Inventory.Properti
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.csproj.GenerateResource.cache
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.csproj.CoreCompileInputs.cache
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.csproj.Fody.CopyLocal.cache
-D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.exe.manifest
-D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.application
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.csproj.CopyComplete
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.exe
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.pdb
