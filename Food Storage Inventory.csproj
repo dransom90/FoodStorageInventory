@@ -269,10 +269,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\LocationRepository.cs" />
     <Compile Include="ViewModel\MainMenuViewModel.cs" />
     <Compile Include="ViewModel\NewItemViewModel.cs" />
     <Compile Include="ViewModel\OverviewViewModel.cs" />
     <Compile Include="ViewModel\SearchViewModel.cs" />
+    <Compile Include="Views\GeneralInventoryWindow.xaml.cs">
+      <DependentUpon>GeneralInventoryWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\OverviewWindow.xaml.cs">
       <DependentUpon>OverviewWindow.xaml</DependentUpon>
     </Compile>
@@ -298,6 +303,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewItemPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GeneralInventoryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

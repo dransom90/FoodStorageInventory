@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Food_Storage_Inventory.Views
 {
 	/// <summary>
-	/// Interaction logic for GeneralInventory.xaml
+	/// Interaction logic for GeneralInventoryWindow.xaml
 	/// </summary>
-	public partial class GeneralInventory : Window
+	public partial class GeneralInventoryWindow : Window
 	{
-		public GeneralInventory()
+		public GeneralInventoryWindow()
 		{
 			InitializeComponent();
 		}

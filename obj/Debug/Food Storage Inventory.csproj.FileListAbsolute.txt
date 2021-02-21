@@ -30,3 +30,5 @@ D:\Repositories\FoodStorageInventory\obj\Debug\Views\OverviewWindow.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\OverviewWindow.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\SearchWindow.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\SearchWindow.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\GeneralInventoryWindow.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\GeneralInventoryWindow.baml
