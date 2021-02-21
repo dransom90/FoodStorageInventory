@@ -37,15 +37,15 @@
 			</Grid.ColumnDefinitions>
 
 			<Label Grid.Row="0" Grid.Column="0" Margin="10" Content="Item Name: " />
-			<ComboBox Grid.Row="0" Grid.Column="1" Margin="10" ItemsSource="{Binding Source={x:Static model:FoodItemRepository.Instance}, Path=FoodItems}" />
+			<ComboBox Grid.Row="0" Grid.Column="1" Margin="10" ItemsSource="{Binding Source={x:Static model:FoodItemRepository.Instance}, Path=FoodItems}" SelectedItem="{Binding SelectedFoodItem}" />
 
 			<Label Grid.Row="1" Grid.Column="0" Margin="10" Content="Assign Location: " />
-			<ComboBox Grid.Row="1" Grid.Column="1" Margin="10" ItemsSource="{Binding Source={x:Static model:LocationRepository.Instance}, Path=Locations}" />
+			<ComboBox Grid.Row="1" Grid.Column="1" Margin="10" ItemsSource="{Binding Source={x:Static model:LocationRepository.Instance}, Path=Locations}" SelectedItem="{Binding SelectedLocation}" />
 
 			<Label Grid.Row="2" Grid.Column="0" Margin="10" Content="Item Quantity" />
-			<number:IntegerUpDown Grid.Row="2" Grid.Column="2" Height="25" Margin="10" Minimum="0" />
+			<number:IntegerUpDown Grid.Row="2" Grid.Column="2" Height="25" Margin="10" Minimum="0" Text="{Binding UpdatedQuantity}" />
 
-			<Button Grid.Row="3" Grid.Column="1" Width="100" Margin="10" Content="Save" />
+			<Button Grid.Row="3" Grid.Column="1" Width="100" Margin="10" Content="Save" Command="{Binding SaveCommand}" />
 		</Grid>
 	</Grid>
 </Window>

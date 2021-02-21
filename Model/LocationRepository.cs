@@ -68,11 +68,11 @@ namespace Food_Storage_Inventory.Model
 				_logger.Error("Failed to read JSON file.  Creating empty collection.", ex);
 				Locations = new ObservableCollection<Location>()
 				{
-					new Location(DEFAULT_ENTRY)
+					new Location(DEFAULT_ENTRY),
+					new Location("None")
 				};
 			}
 			return false;
 		}
 	}
-}
 }

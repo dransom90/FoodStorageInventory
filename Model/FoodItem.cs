@@ -9,7 +9,7 @@ namespace Food_Storage_Inventory.Model
 		public int Quantity { get; set; }
 		public string Container { get; set; }
 
-		public override string ToString() => $"{_name} - {Container}";
+		public override string ToString() => $"{_name}";
 
 		public FoodItem(string name, int quantity, string container)
 		{

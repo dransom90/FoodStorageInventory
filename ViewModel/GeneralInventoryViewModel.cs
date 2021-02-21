@@ -9,47 +9,36 @@ namespace Food_Storage_Inventory.ViewModel
 {
 	public class GeneralInventoryViewModel : INotifyPropertyChanged
 	{
-		public string SelectedOption { get; set; }
+		public FoodItem SelectedFoodItem { get; set; }
+		public Location SelectedLocation { get; set; }
+
 		public string UpdatedQuantity { get; set; } = "0";
 
-		public string SelectedItemQuantity { get; set; } = string.Empty;
-
-		public ICommand NewItemButtonCommand => new DelegateCommand<object>(OnNewItemButtonExecuted);
-
-		public ICommand UpdateItemCommand => new DelegateCommand<object>(OnUpdateItemExecuted);
-		public ICommand SelectedItemChangedCommand => new DelegateCommand<object>(OnSelectedItemChanged);
+		public ICommand SaveCommand => new DelegateCommand<object>(OnSaveExecuted);
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		private void OnSelectedItemChanged(object context)
+		public GeneralInventoryViewModel()
 		{
-			var results = FoodItemRepository.Instance.FoodItems.Where(x => x.Name == SelectedOption);
-
-			if (!results.Any())
-				return;
-
-			SelectedItemQuantity = $"Quantity: {results.First().Quantity}";
-			PropertyChanged(this, new PropertyChangedEventArgs(nameof(SelectedItemQuantity)));
+			// TODO:	Reset all quantities to zero
 		}
 
-		private void OnNewItemButtonExecuted(object context)
+		private void OnSaveExecuted(object context)
 		{
-			NewItemPopup newItemPopup = new NewItemPopup();
-			newItemPopup.Show();
+			var temp = FoodItemRepository.Instance.FoodItems;
 		}
 
-		private void OnUpdateItemExecuted(object context)
+		private void UpdateItemInventory()
 		{
-			var results = FoodItemRepository.Instance.FoodItems.Where(x => x.Name == SelectedOption);
+			var newQuantity = int.Parse(UpdatedQuantity);
+			// Assign UpdatedQuanity of SelectedFoodItem Name to SelectedLocation
+			for (int i = 0; i < newQuantity; i++)
+			{
+				SelectedLocation.StoredFoodItems.Add(SelectedFoodItem.Name);
+			}
 
-			if (!results.Any())
-				return;
-
-			FoodItem foodItem = results.First();
-			foodItem.Quantity = int.Parse(UpdatedQuantity);
-
-			SelectedItemQuantity = $"Quantity: {foodItem.Quantity}";
-			PropertyChanged(this, new PropertyChangedEventArgs(nameof(SelectedItemQuantity)));
+			// Increment SelectedFoodItem's Quantity
+			SelectedFoodItem.Quantity += newQuantity;
 		}
 	}
 }

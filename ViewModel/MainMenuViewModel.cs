@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Food_Storage_Inventory.Model;
+using Food_Storage_Inventory.Views;
 using Prism.Commands;
 
 namespace Food_Storage_Inventory.ViewModel
@@ -35,6 +36,8 @@ namespace Food_Storage_Inventory.ViewModel
 
 		private void OnInventoryExecuted(object context)
 		{
+			GeneralInventoryWindow generalInventoryWindow = new GeneralInventoryWindow();
+			generalInventoryWindow.Show();
 		}
 	}
 }
