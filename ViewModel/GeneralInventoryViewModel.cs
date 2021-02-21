@@ -18,17 +18,8 @@ namespace Food_Storage_Inventory.ViewModel
 
 		public ICommand UpdateItemCommand => new DelegateCommand<object>(OnUpdateItemExecuted);
 		public ICommand SelectedItemChangedCommand => new DelegateCommand<object>(OnSelectedItemChanged);
-		public ICommand SaveCommand => new DelegateCommand<object>(OnSaveExecuted);
-		public ICommand BackUpCommand => new DelegateCommand<object>(OnBackupExecuted);
-		public ICommand ExitProgramCommand => new DelegateCommand<object>(OnExitProgram);
 
 		public event PropertyChangedEventHandler PropertyChanged;
-
-		private void OnExitProgram(object context) => Application.Current.Shutdown();
-
-		private void OnSaveExecuted(object context) => FoodItemRepository.Instance.SaveToFile();
-
-		private void OnBackupExecuted(object context) => FoodItemRepository.Instance.BackupFile();
 
 		private void OnSelectedItemChanged(object context)
 		{

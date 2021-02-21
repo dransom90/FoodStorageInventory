@@ -11,7 +11,7 @@
 		mc:Ignorable="d"
 		Title="Food Storage Inventory" Height="450" Width="800">
 	<Window.DataContext>
-		<VM:GeneralInventoryViewModel />
+		<VM:MainMenuViewModel />
 	</Window.DataContext>
 
 	<Window.Resources>
@@ -38,13 +38,16 @@
 				<MenuItem Header="B_ack Up" Command="{Binding BackUpCommand}" IsEnabled="False" />
 				<MenuItem Header="E_xit" Command="{Binding ExitProgramCommand}" />
 			</MenuItem>
+			<MenuItem Header=" _Settings" />
+			<MenuItem Header=" _Help" />
 		</Menu>
 
 		<Grid Grid.Row="1">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="1*" />
-				<RowDefinition Height="1*" />
-				<RowDefinition Height="1*" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
 				<RowDefinition Height="1*" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
@@ -52,7 +55,10 @@
 				<ColumnDefinition Width="1*" />
 				<ColumnDefinition Width="1*" />
 			</Grid.ColumnDefinitions>
-			<ListBox Name="listBox" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+			<Button Grid.Row="1" Grid.Column="1" Margin="10" Command="{Binding OverviewCommand}">Overview</Button>
+			<Button Grid.Row="2" Grid.Column="1" Margin="10" Command="{Binding SearchCommand}">Search</Button>
+			<Button Grid.Row="3" Grid.Column="1" Margin="10" Command="{Binding InventoryCommand}">General Inventory Count</Button>
+			<!--<ListBox Name="listBox" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
 				 ItemsSource="{Binding Source={x:Static model:FoodItemRepository.Instance}, Path=FoodItems}"
 				 SelectedValue="{Binding SelectedOption}">
 				<ie:Interaction.Triggers>
@@ -66,7 +72,7 @@
 
 			<Button Grid.Row="1" Grid.Column="1" Height="25" Margin="10" Command="{Binding UpdateItemCommand}">Update</Button>
 			<number:IntegerUpDown Grid.Row="1" Grid.Column="2" Height="25" Margin="10" Minimum="0" Text="{Binding UpdatedQuantity}" />
-			<Button Grid.Row="2" Grid.Column="1" Height="25" Margin="10" Command="{Binding NewItemButtonCommand}">Add New Item</Button>
+			<Button Grid.Row="2" Grid.Column="1" Height="25" Margin="10" Command="{Binding NewItemButtonCommand}">Add New Item</Button>-->
 		</Grid>
 	</Grid>
 </Window>
