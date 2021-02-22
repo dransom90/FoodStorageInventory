@@ -6,6 +6,7 @@
 		xmlns:VM="clr-namespace:Food_Storage_Inventory.ViewModel"
 		xmlns:model="clr-namespace:Food_Storage_Inventory.Model"
 		xmlns:number="http://schemas.xceed.com/wpf/xaml/toolkit"
+		xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
 		xmlns:local="clr-namespace:Food_Storage_Inventory.Views"
 		mc:Ignorable="d"
 		Title="General Inventory" Height="450" Width="800">
@@ -37,7 +38,13 @@
 			</Grid.ColumnDefinitions>
 
 			<Label Grid.Row="0" Grid.Column="0" Margin="10" Content="Item Name: " />
-			<ComboBox Grid.Row="0" Grid.Column="1" Margin="10" ItemsSource="{Binding Source={x:Static model:FoodItemRepository.Instance}, Path=FoodItems}" SelectedItem="{Binding SelectedFoodItem}" />
+			<ComboBox Grid.Row="0" Grid.Column="1" Margin="10" ItemsSource="{Binding Source={x:Static model:FoodItemRepository.Instance}, Path=FoodItems}" SelectedItem="{Binding SelectedFoodItem}">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="SelectionChanged">
+						<i:InvokeCommandAction Command="{Binding SelectionChangedCommand}" />
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</ComboBox>
 
 			<Label Grid.Row="1" Grid.Column="0" Margin="10" Content="Assign Location: " />
 			<ComboBox Grid.Row="1" Grid.Column="1" Margin="10" ItemsSource="{Binding Source={x:Static model:LocationRepository.Instance}, Path=Locations}" SelectedItem="{Binding SelectedLocation}" />

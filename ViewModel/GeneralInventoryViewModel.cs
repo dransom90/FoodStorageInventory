@@ -15,6 +15,7 @@ namespace Food_Storage_Inventory.ViewModel
 		public string UpdatedQuantity { get; set; } = "0";
 
 		public ICommand SaveCommand => new DelegateCommand<object>(OnSaveExecuted);
+		public ICommand SelectionChangedCommand => new DelegateCommand<object>(OnSelectionChanged);
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
@@ -26,6 +27,15 @@ namespace Food_Storage_Inventory.ViewModel
 		private void OnSaveExecuted(object context)
 		{
 			var temp = FoodItemRepository.Instance.FoodItems;
+		}
+
+		private void OnSelectionChanged(object context)
+		{
+			if (SelectedFoodItem.Name == FoodItemRepository.DEFAULT_NAME)
+			{
+				NewItemPopup newItemPopup = new NewItemPopup();
+				newItemPopup.Show();
+			}
 		}
 
 		private void UpdateItemInventory()

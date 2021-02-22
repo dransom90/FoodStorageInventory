@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.IO;
+using System.Linq;
 using log4net;
 using Newtonsoft.Json;
 
@@ -14,6 +15,8 @@ namespace Food_Storage_Inventory.Model
 
 		private const string INVENTORY_FILE_PATH = @"C:\Program Files\Food Storage Inventory\inventory.txt";
 		private const string INVENTORY_DIRECTORY = @"C:\Program Files\Food Storage Inventory";
+
+		public const string DEFAULT_NAME = "Create A New Item";
 
 		public static FoodItemRepository Instance => lazy.Value;
 
@@ -61,6 +64,7 @@ namespace Food_Storage_Inventory.Model
 					var json = file.ReadToEnd();
 
 					FoodItems = JsonConvert.DeserializeObject<ObservableCollection<FoodItem>>(json);
+					CheckForDefaultEntry();
 				}
 
 				return true;
@@ -68,7 +72,11 @@ namespace Food_Storage_Inventory.Model
 			catch (Exception ex)
 			{
 				_logger.Error("Failed to read JSON file.  Creating empty collection.", ex);
-				FoodItems = new ObservableCollection<FoodItem>();
+				FoodItems = new ObservableCollection<FoodItem>()
+				{
+					new FoodItem(DEFAULT_NAME, 0, "NONE")
+				};
+
 				return false;
 			}
 		}
@@ -76,6 +84,16 @@ namespace Food_Storage_Inventory.Model
 		public bool BackupFile()
 		{
 			return false;
+		}
+
+		private void CheckForDefaultEntry()
+		{
+			var names = FoodItems.Where(x => x.Name == DEFAULT_NAME);
+
+			if (!names.Any())
+			{
+				FoodItems.Add(new FoodItem(DEFAULT_NAME, 0, "NONE"));
+			}
 		}
 	}
 }
