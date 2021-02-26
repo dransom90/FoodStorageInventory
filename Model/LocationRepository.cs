@@ -13,7 +13,7 @@ namespace Food_Storage_Inventory.Model
 		private static readonly ILog _logger = LogManager.GetLogger(typeof(LocationRepository));
 
 		private const string DIRECTORY = @"C:\Program Files\Food Storage Inventory";
-		private const string FILE_PATH = @"C:\Program Files\Food Storage Inventory\locations.txt";
+		private const string FILE_PATH = @"C:\Program Files\Food Storage Inventory\locations.json";
 		public const string DEFAULT_ENTRY = "Create A New Location";
 
 		public static LocationRepository Instance = lazy.Value;
