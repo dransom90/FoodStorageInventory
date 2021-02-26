@@ -119,21 +119,30 @@ namespace Food_Storage_Inventory.ViewModel
 
 		private void OnNewItemExecuted(object context)
 		{
-			if (FoodItemRepository.Instance.FoodItems.Any())
+			if (LocationRepository.Instance.SelectedLocation is null && !LocationRepository.Instance.SelectedLocation.StoredFoodItems.Any())
 			{
-				var results = FoodItemRepository.Instance.FoodItems.Where(x => x.Name == NewItemName);
-				if (results.Any())
-				{
-					FeedbackText = "Item Already Exists!";
-					NotifyPropertyChanged(nameof(FeedbackText));
-					return;
-				}
-
-				FeedbackText = "Item Added Successfully";
-				NotifyPropertyChanged(nameof(FeedbackText));
+				UpdateFeedbackText("Please Fill Out All Fields");
+				return;
 			}
 
-			FoodItemRepository.Instance.FoodItems.Add(new FoodItem(NewItemName, int.Parse(NewItemQuantity), SelectedContainer));
+			var results = LocationRepository.Instance.SelectedLocation.StoredFoodItems.Where(x => x.Name == NewItemName);
+			if (results.Any())
+			{
+				UpdateFeedbackText("Item Already Exists!");
+				return;
+			}
+
+			UpdateFeedbackText("Item Added Successfully");
+
+			FoodItem newFoodItem = new FoodItem(NewItemName, int.Parse(NewItemQuantity), SelectedContainer);
+			LocationRepository.Instance.SelectedLocation.AddItem(newFoodItem);
+			LocationRepository.Instance.SelectedFoodItem = newFoodItem;
+		}
+
+		private void UpdateFeedbackText(string text)
+		{
+			FeedbackText = text;
+			NotifyPropertyChanged(nameof(FeedbackText));
 		}
 
 		public bool ReadFromFile()
