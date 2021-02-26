@@ -22,7 +22,7 @@ namespace Food_Storage_Inventory.ViewModel
 
 		private void OnExitProgram(object context) => Application.Current.Shutdown();
 
-		private void OnSaveExecuted(object context) => FoodItemRepository.Instance.SaveToFile();
+		private void OnSaveExecuted(object context) => LocationRepository.Instance.SaveToFile();
 
 		private void OnBackupExecuted(object context) => FoodItemRepository.Instance.BackupFile();
 
@@ -36,8 +36,12 @@ namespace Food_Storage_Inventory.ViewModel
 
 		private void OnInventoryExecuted(object context)
 		{
-			GeneralInventoryWindow generalInventoryWindow = new GeneralInventoryWindow();
-			generalInventoryWindow.Show();
+			MessageBoxResult result = MessageBox.Show("This will reset all Items back to zero!  Do you want to continue?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+			if (result == MessageBoxResult.Yes)
+			{
+				GeneralInventoryWindow generalInventoryWindow = new GeneralInventoryWindow();
+				generalInventoryWindow.Show();
+			}
 		}
 	}
 }

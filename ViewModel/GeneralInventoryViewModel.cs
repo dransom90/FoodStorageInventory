@@ -1,54 +1,145 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Food_Storage_Inventory.Model;
+using Food_Storage_Inventory.Views;
 using Prism.Commands;
 
 namespace Food_Storage_Inventory.ViewModel
 {
 	public class GeneralInventoryViewModel : INotifyPropertyChanged
 	{
+		private bool errorTextVisible = false;
+		private Location selectedLocation;
+		private string quantityText;
+
 		public FoodItem SelectedFoodItem { get; set; }
-		public Location SelectedLocation { get; set; }
+
+		public Location SelectedLocation
+		{
+			get => selectedLocation;
+			set
+			{
+				if (selectedLocation == value)
+					return;
+				selectedLocation = value;
+				LocationRepository.Instance.CurrentLocation = selectedLocation;
+				ItemsInLocation = selectedLocation.StoredFoodItems;
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ItemsInLocation)));
+			}
+		}
 
 		public string UpdatedQuantity { get; set; } = "0";
 
+		public ObservableCollection<FoodItem> ItemsInLocation { get; set; }
+
+		public bool ErrorTextVisible
+		{
+			get => errorTextVisible;
+			set
+			{
+				if (errorTextVisible == value)
+					return;
+				errorTextVisible = value;
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ErrorTextVisible)));
+			}
+		}
+
+		public string QuantityText
+		{
+			get => quantityText;
+			set
+			{
+				if (quantityText == value)
+					return;
+				quantityText = value;
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(QuantityText)));
+			}
+		}
+
 		public ICommand SaveCommand => new DelegateCommand<object>(OnSaveExecuted);
-		public ICommand SelectionChangedCommand => new DelegateCommand<object>(OnSelectionChanged);
+
+		public ICommand LocationSelectionChangedCommand => new DelegateCommand<object>(OnSelectedLocationChanged);
+		public ICommand ItemSelectionChangedCommand => new DelegateCommand<object>(OnSelectedItemChanged);
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public GeneralInventoryViewModel()
 		{
-			// TODO:	Reset all quantities to zero
+			LocationRepository.Instance.ResetAllQuantities();
 		}
 
 		private void OnSaveExecuted(object context)
 		{
-			var temp = FoodItemRepository.Instance.FoodItems;
+			if (LocationRepository.Instance.SelectedFoodItem is null && LocationRepository.Instance.SelectedLocation is null)
+			{
+				ErrorTextVisible = true;
+				return;
+			}
+
+			bool success = LocationRepository.Instance.SelectedLocation.UpdateItem(LocationRepository.Instance.SelectedFoodItem, int.Parse(UpdatedQuantity));
+			if (!success)
+			{
+				LocationRepository.Instance.SelectedFoodItem.Quantity = int.Parse(UpdatedQuantity);
+				LocationRepository.Instance.SelectedLocation.AddItem(SelectedFoodItem);
+			}
+
+			SetQuantityText();
+			LocationRepository.Instance.SaveToFile();
 		}
 
-		private void OnSelectionChanged(object context)
+		private void OnSelectedLocationChanged(object context)
 		{
-			if (SelectedFoodItem.Name == FoodItemRepository.DEFAULT_NAME)
+			if (!(LocationRepository.Instance.SelectedLocation is null))
+			{
+				RunNewLocation();
+			}
+
+			SetQuantityText();
+		}
+
+		private void OnSelectedItemChanged(object context)
+		{
+			if (!(LocationRepository.Instance.SelectedFoodItem is null))
+			{
+				RunNewItem();
+			}
+
+			SetQuantityText();
+		}
+
+		private void SetQuantityText()
+		{
+			if (LocationRepository.Instance.SelectedFoodItem is null)
+			{
+				QuantityText = string.Empty;
+			}
+			else
+			{
+				QuantityText = $"Current Quantity: {LocationRepository.Instance.SelectedFoodItem.Quantity}";
+			}
+		}
+
+		private void RunNewItem()
+		{
+			if (LocationRepository.Instance.SelectedFoodItem.Name == Location.DEFAULT_FOOD_ITEM)
 			{
 				NewItemPopup newItemPopup = new NewItemPopup();
 				newItemPopup.Show();
+				return;
 			}
 		}
 
-		private void UpdateItemInventory()
+		private void RunNewLocation()
 		{
-			var newQuantity = int.Parse(UpdatedQuantity);
-			// Assign UpdatedQuanity of SelectedFoodItem Name to SelectedLocation
-			for (int i = 0; i < newQuantity; i++)
+			if (LocationRepository.Instance.SelectedLocation.Name == LocationRepository.DEFAULT_ENTRY)
 			{
-				SelectedLocation.StoredFoodItems.Add(SelectedFoodItem.Name);
+				NewLocationWindow newLocationWindow = new NewLocationWindow();
+				newLocationWindow.Show();
 			}
-
-			// Increment SelectedFoodItem's Quantity
-			SelectedFoodItem.Quantity += newQuantity;
 		}
 	}
 }

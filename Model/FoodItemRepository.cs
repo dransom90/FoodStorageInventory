@@ -30,6 +30,8 @@ namespace Food_Storage_Inventory.Model
 
 		public ObservableCollection<FoodItem> FoodItems { get; set; }
 
+		public void ResetAllQuantities() => FoodItems.ResetQuantities();
+
 		public bool SaveToFile()
 		{
 			try
