@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Food_Storage_Inventory
+namespace Food_Storage_Inventory.Views
 {
 	/// <summary>
-	/// Interaction logic for NewItemPopup.xaml
+	/// Interaction logic for GeneralInventoryWindow.xaml
 	/// </summary>
-	public partial class NewItemPopup : Window
+	public partial class GeneralInventoryWindow : Window
 	{
-		public NewItemPopup()
+		public GeneralInventoryWindow()
 		{
 			InitializeComponent();
 		}

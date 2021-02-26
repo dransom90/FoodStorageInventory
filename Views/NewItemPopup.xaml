@@ -1,4 +1,4 @@
-﻿<Window x:Class="Food_Storage_Inventory.NewItemPopup"
+﻿<Window x:Class="Food_Storage_Inventory.Views.NewItemPopup"
 		x:Name="NewItemPopupWindow"
 		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,7 +6,6 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:VM="clr-namespace:Food_Storage_Inventory.ViewModel"
 		xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-		xmlns:local="clr-namespace:Food_Storage_Inventory"
 		xmlns:number="http://schemas.xceed.com/wpf/xaml/toolkit"
 		mc:Ignorable="d"
 		Title="Add New Item" Height="450" Width="800">

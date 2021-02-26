@@ -269,10 +269,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\LocationRepository.cs" />
     <Compile Include="ViewModel\MainMenuViewModel.cs" />
     <Compile Include="ViewModel\NewItemViewModel.cs" />
+    <Compile Include="ViewModel\NewLocationViewModel.cs" />
     <Compile Include="ViewModel\OverviewViewModel.cs" />
     <Compile Include="ViewModel\SearchViewModel.cs" />
+    <Compile Include="Views\GeneralInventoryWindow.xaml.cs">
+      <DependentUpon>GeneralInventoryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewLocationWindow.xaml.cs">
+      <DependentUpon>NewLocationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\OverviewWindow.xaml.cs">
       <DependentUpon>OverviewWindow.xaml</DependentUpon>
     </Compile>
@@ -289,7 +299,7 @@
     </Compile>
     <Compile Include="Model\FoodItem.cs" />
     <Compile Include="Model\FoodItemRepository.cs" />
-    <Compile Include="NewItemPopup.xaml.cs">
+    <Compile Include="Views\NewItemPopup.xaml.cs">
       <DependentUpon>NewItemPopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\GeneralInventoryViewModel.cs" />
@@ -297,7 +307,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NewItemPopup.xaml">
+    <Page Include="Views\NewItemPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GeneralInventoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewLocationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
