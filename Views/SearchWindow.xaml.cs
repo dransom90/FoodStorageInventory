@@ -17,7 +17,7 @@ namespace Food_Storage_Inventory.Views
 	/// <summary>
 	/// Interaction logic for SearchWindow.xaml
 	/// </summary>
-	public partial class SearchWindow : Window
+	public partial class SearchWindow : Page
 	{
 		public SearchWindow()
 		{

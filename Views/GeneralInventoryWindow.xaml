@@ -1,4 +1,4 @@
-﻿<Window x:Class="Food_Storage_Inventory.Views.GeneralInventoryWindow"
+﻿<Page x:Class="Food_Storage_Inventory.Views.GeneralInventoryWindow"
 		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,12 +7,11 @@
 		xmlns:model="clr-namespace:Food_Storage_Inventory.Model"
 		xmlns:number="http://schemas.xceed.com/wpf/xaml/toolkit"
 		xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-		xmlns:local="clr-namespace:Food_Storage_Inventory.Views"
 		mc:Ignorable="d"
-		Title="General Inventory" Height="450" Width="800">
-	<Window.DataContext>
+		Title="General Inventory" Height="400" Width="750">
+	<Page.DataContext>
 		<VM:GeneralInventoryViewModel />
-	</Window.DataContext>
+	</Page.DataContext>
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
@@ -20,7 +19,7 @@
 			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 
-		<Menu Grid.Row="0" IsMainMenu="False">
+		<Menu Grid.Row="0" IsMainMenu="False" Margin="5">
 			<MenuItem Header="_Help" />
 		</Menu>
 
@@ -33,7 +32,7 @@
 				<RowDefinition Height="1*" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="Auto" />
 				<ColumnDefinition Width="1*" />
 			</Grid.ColumnDefinitions>
 
@@ -64,4 +63,4 @@
 			<Label Grid.Row="4" Grid.Column="0" TextElement.FontSize="24" Content="{Binding QuantityText}" />
 		</Grid>
 	</Grid>
-</Window>
+</Page>

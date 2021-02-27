@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Food_Storage_Inventory.Views
 {
@@ -25,9 +14,17 @@ namespace Food_Storage_Inventory.Views
 			InitializeComponent();
 		}
 
-		private void OverviewClick(object sender, RoutedEventArgs e)
+		private void OverviewClick(object sender, RoutedEventArgs e) => NavigationService.Navigate(new OverviewWindow());
+
+		private void SearchClick(object sender, RoutedEventArgs e) => NavigationService.Navigate(new SearchWindow());
+
+		private void InventoryClick(object sender, RoutedEventArgs e)
 		{
-			NavigationService.Navigate(new OverviewWindow());
+			MessageBoxResult result = MessageBox.Show("This will reset all Items back to zero!  Do you want to continue?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+			if (result == MessageBoxResult.Yes)
+			{
+				NavigationService.Navigate(new GeneralInventoryWindow());
+			}
 		}
 	}
 }
