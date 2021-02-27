@@ -280,6 +280,9 @@
     <Compile Include="Views\GeneralInventoryWindow.xaml.cs">
       <DependentUpon>GeneralInventoryWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NewLocationWindow.xaml.cs">
       <DependentUpon>NewLocationWindow.xaml</DependentUpon>
     </Compile>
@@ -307,6 +310,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\NewItemPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

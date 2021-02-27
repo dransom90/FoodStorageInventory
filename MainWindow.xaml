@@ -1,78 +1,14 @@
-﻿<Window x:Class="Food_Storage_Inventory.MainWindow"
+﻿<NavigationWindow x:Class="Food_Storage_Inventory.MainWindow"
 		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:views="clr-namespace:Food_Storage_Inventory.Views"
 		xmlns:local="clr-namespace:Food_Storage_Inventory"
 		xmlns:VM="clr-namespace:Food_Storage_Inventory.ViewModel"
 		xmlns:model="clr-namespace:Food_Storage_Inventory.Model"
 		xmlns:number="http://schemas.xceed.com/wpf/xaml/toolkit"
 		xmlns:ie="http://schemas.microsoft.com/xaml/behaviors"
 		mc:Ignorable="d"
-		Title="Food Storage Inventory" Height="450" Width="800">
-	<Window.DataContext>
-		<VM:MainMenuViewModel />
-	</Window.DataContext>
-
-	<Window.Resources>
-		<DataTemplate DataType="{x:Type model:FoodItem}">
-			<RadioButton
-				Focusable="False"
-				IsHitTestVisible="False"
-				Content="{Binding Name}"
-				IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=ListBoxItem}}">
-			</RadioButton>
-		</DataTemplate>
-	</Window.Resources>
-
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="*" />
-			<RowDefinition Height="Auto" />
-		</Grid.RowDefinitions>
-
-		<Menu Grid.Row="0" IsMainMenu="False">
-			<MenuItem Header="_File">
-				<MenuItem Header="S_ave" Command="{Binding SaveCommand}" />
-				<MenuItem Header="B_ack Up" Command="{Binding BackUpCommand}" IsEnabled="False" />
-				<MenuItem Header="E_xit" Command="{Binding ExitProgramCommand}" />
-			</MenuItem>
-			<MenuItem Header=" _Settings" />
-			<MenuItem Header=" _Help" />
-		</Menu>
-
-		<Grid Grid.Row="1">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="1*" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="1*" />
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="1*" />
-				<ColumnDefinition Width="1*" />
-				<ColumnDefinition Width="1*" />
-			</Grid.ColumnDefinitions>
-			<Button Grid.Row="1" Grid.Column="1" Margin="10" Command="{Binding OverviewCommand}">Overview</Button>
-			<Button Grid.Row="2" Grid.Column="1" Margin="10" Command="{Binding SearchCommand}">Search</Button>
-			<Button Grid.Row="3" Grid.Column="1" Margin="10" Command="{Binding InventoryCommand}">General Inventory Count</Button>
-			<!--<ListBox Name="listBox" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
-				 ItemsSource="{Binding Source={x:Static model:FoodItemRepository.Instance}, Path=FoodItems}"
-				 SelectedValue="{Binding SelectedOption}">
-				<ie:Interaction.Triggers>
-					<ie:EventTrigger EventName="SelectionChanged">
-						<ie:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}" CommandParameter="{Binding ElementName=listBox, Path=SelectedItem}" />
-					</ie:EventTrigger>
-				</ie:Interaction.Triggers>
-			</ListBox>
-
-			<Label Grid.Row="0" Grid.Column="1" Height="25" Margin="10" TextElement.Foreground="Black" Content="{Binding SelectedItemQuantity}" />
-
-			<Button Grid.Row="1" Grid.Column="1" Height="25" Margin="10" Command="{Binding UpdateItemCommand}">Update</Button>
-			<number:IntegerUpDown Grid.Row="1" Grid.Column="2" Height="25" Margin="10" Minimum="0" Text="{Binding UpdatedQuantity}" />
-			<Button Grid.Row="2" Grid.Column="1" Height="25" Margin="10" Command="{Binding NewItemButtonCommand}">Add New Item</Button>-->
-		</Grid>
-	</Grid>
-</Window>
+		Title="Food Storage Inventory" Height="450" Width="800" Source="Views/HomePage.xaml">
+</NavigationWindow>

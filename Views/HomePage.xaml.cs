@@ -10,18 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Food_Storage_Inventory.Views
 {
 	/// <summary>
-	/// Interaction logic for OverviewWindow.xaml
+	/// Interaction logic for HomePage.xaml
 	/// </summary>
-	public partial class OverviewWindow : Page
+	public partial class HomePage : Page
 	{
-		public OverviewWindow()
+		public HomePage()
 		{
 			InitializeComponent();
+		}
+
+		private void OverviewClick(object sender, RoutedEventArgs e)
+		{
+			NavigationService.Navigate(new OverviewWindow());
 		}
 	}
 }

@@ -34,3 +34,5 @@ D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewItemPopup.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewItemPopup.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewLocationWindow.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewLocationWindow.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\HomePage.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\HomePage.baml
