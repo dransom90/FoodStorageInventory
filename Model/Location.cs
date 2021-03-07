@@ -1,18 +1,26 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 
 namespace Food_Storage_Inventory.Model
 {
-	public class Location
+	public class Location : INotifyPropertyChanged
 	{
 		public static readonly string DEFAULT_FOOD_ITEM = "Create A New Item";
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public string Name { get; set; }
 		public ObservableCollection<FoodItem> StoredFoodItems { get; set; }
+		public ObservableCollection<FoodItem> ValidFoodItems { get => new ObservableCollection<FoodItem>(StoredFoodItems.Where(x => x.Visible)); }
 
-		public Location(string name)
+		public bool Visible { get; set; }
+
+		public Location(string name, bool visible)
 		{
 			Name = name ?? throw new ArgumentNullException(nameof(name));
+			Visible = visible;
 			CheckForDefaultEntry();
 		}
 
@@ -22,7 +30,7 @@ namespace Food_Storage_Inventory.Model
 			{
 				StoredFoodItems = new ObservableCollection<FoodItem>()
 				{
-					new FoodItem(DEFAULT_FOOD_ITEM, 0, "NONE")
+					new FoodItem(DEFAULT_FOOD_ITEM, 0, "NONE", false)
 				};
 			}
 
@@ -30,7 +38,7 @@ namespace Food_Storage_Inventory.Model
 
 			if (!names.Any())
 			{
-				StoredFoodItems.Add(new FoodItem(DEFAULT_FOOD_ITEM, 0, "NONE"));
+				StoredFoodItems.Add(new FoodItem(DEFAULT_FOOD_ITEM, 0, "NONE", false));
 			}
 		}
 
@@ -64,6 +72,11 @@ namespace Food_Storage_Inventory.Model
 		public override string ToString()
 		{
 			return Name;
+		}
+
+		private void NotifyPropertyChanged(string propertyName)
+		{
+			PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
 
 		//TODO:	Implement Add and Remove logic

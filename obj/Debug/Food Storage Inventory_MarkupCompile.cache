@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Repositories\FoodStorageInventory\App.xaml
-7-1127383149
+8-2125366104
 
-221290480557
-1391903053106
-MainWindow.xaml;Views\HomePage.xaml;Views\NewItemPopup.xaml;Views\GeneralInventoryWindow.xaml;Views\NewLocationWindow.xaml;Views\OverviewWindow.xaml;Views\SearchWindow.xaml;
+25-370269417
+140296685480
+MainWindow.xaml;Views\EditItems.xaml;Views\HomePage.xaml;Views\NewItemPopup.xaml;Views\GeneralInventoryWindow.xaml;Views\NewLocationWindow.xaml;Views\OverviewWindow.xaml;Views\SearchWindow.xaml;
 
 False
 

@@ -6,7 +6,7 @@
 		xmlns:VM="clr-namespace:Food_Storage_Inventory.ViewModel"
 		xmlns:model="clr-namespace:Food_Storage_Inventory.Model"
 		mc:Ignorable="d"
-		Title="Overview"
+		Title="General Information"
 		Height="450"
 		Width="800">
 	<Page.DataContext>
@@ -14,19 +14,28 @@
 	</Page.DataContext>
 
 	<Grid>
-		<TreeView Name="treeView" ItemsSource="{Binding Locations}" Grid.Row="1" Grid.ColumnSpan="2">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<Label Grid.Row="0" Content="{Binding Report}" />
+		<TreeView Name="treeView" ItemsSource="{Binding Source={x:Static model:LocationRepository.Instance}, Path=VisibleLocations}" Grid.Row="1" Grid.ColumnSpan="2">
 			<TreeView.Resources>
-				<HierarchicalDataTemplate DataType="{x:Type model:Location}" ItemsSource="{Binding StoredFoodItems}">
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="{Binding Name}" />
-					</StackPanel>
+				<HierarchicalDataTemplate DataType="{x:Type model:Location}" ItemsSource="{Binding ValidFoodItems}">
+					<Border CornerRadius="6" BorderBrush="Gray" Background="LightGray" BorderThickness="2">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="{Binding Name}" />
+						</StackPanel>
+					</Border>
 				</HierarchicalDataTemplate>
 				<DataTemplate DataType="{x:Type model:FoodItem}">
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="{Binding Name}" Margin="5" />
-						<TextBlock Text="{Binding Container}" Margin="5" />
-						<TextBlock Text="{Binding Quantity}" Margin="5" />
-					</StackPanel>
+					<Border CornerRadius="6" BorderBrush="Gray" Background="LightGray" BorderThickness="2">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="{Binding Name}" Margin="5" />
+							<TextBlock Text="{Binding Container}" Margin="5" />
+							<TextBlock Text="{Binding Quantity}" Margin="5" />
+						</StackPanel>
+					</Border>
 				</DataTemplate>
 			</TreeView.Resources>
 		</TreeView>

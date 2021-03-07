@@ -76,7 +76,7 @@ namespace Food_Storage_Inventory.Model
 				_logger.Error("Failed to read JSON file.  Creating empty collection.", ex);
 				FoodItems = new ObservableCollection<FoodItem>()
 				{
-					new FoodItem(DEFAULT_NAME, 0, "NONE")
+					new FoodItem(DEFAULT_NAME, 0, "NONE", false)
 				};
 
 				return false;
@@ -94,7 +94,7 @@ namespace Food_Storage_Inventory.Model
 
 			if (!names.Any())
 			{
-				FoodItems.Add(new FoodItem(DEFAULT_NAME, 0, "NONE"));
+				FoodItems.Add(new FoodItem(DEFAULT_NAME, 0, "NONE", false));
 			}
 		}
 	}

@@ -1,10 +1,11 @@
 ﻿
 FD:\Repositories\FoodStorageInventory\App.xaml;;
 FD:\Repositories\FoodStorageInventory\MainWindow.xaml;;
+FD:\Repositories\FoodStorageInventory\Views\EditItems.xaml;;
+FD:\Repositories\FoodStorageInventory\Views\HomePage.xaml;;
 FD:\Repositories\FoodStorageInventory\Views\NewItemPopup.xaml;;
 FD:\Repositories\FoodStorageInventory\Views\GeneralInventoryWindow.xaml;;
+FD:\Repositories\FoodStorageInventory\Views\NewLocationWindow.xaml;;
 FD:\Repositories\FoodStorageInventory\Views\OverviewWindow.xaml;;
 FD:\Repositories\FoodStorageInventory\Views\SearchWindow.xaml;;
-FD:\Repositories\FoodStorageInventory\Views\NewLocationWindow.xaml;;
-FD:\Repositories\FoodStorageInventory\Views\HomePage.xaml;;
 

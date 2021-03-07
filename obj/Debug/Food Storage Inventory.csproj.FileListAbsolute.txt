@@ -29,10 +29,13 @@ D:\Repositories\FoodStorageInventory\obj\Debug\Views\SearchWindow.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\SearchWindow.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\GeneralInventoryWindow.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\GeneralInventoryWindow.baml
-D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csprojAssemblyReference.cache
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewItemPopup.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewItemPopup.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewLocationWindow.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewLocationWindow.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\HomePage.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\HomePage.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\EditItems.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\EditItems.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\Food_Storage_Inventory.Resources.resources
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csprojAssemblyReference.cache

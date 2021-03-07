@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using log4net;
 using Newtonsoft.Json;
 
@@ -23,6 +24,7 @@ namespace Food_Storage_Inventory.Model
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public ObservableCollection<Location> Locations { get; set; }
+		public ObservableCollection<Location> VisibleLocations { get => new ObservableCollection<Location>(Locations.Where(x => x.Visible)); }
 		public Location CurrentLocation { get; set; }
 
 		public Location SelectedLocation
@@ -52,6 +54,11 @@ namespace Food_Storage_Inventory.Model
 		private LocationRepository()
 		{
 			_ = ReadFromFile();
+		}
+
+		public void NotifyVisibleItemsUpdated()
+		{
+			NotifyPropertyChanged(nameof(VisibleLocations));
 		}
 
 		public void ResetAllQuantities()
@@ -116,11 +123,16 @@ namespace Food_Storage_Inventory.Model
 				_logger.Error("Failed to read JSON file.  Creating empty collection.", ex);
 				Locations = new ObservableCollection<Location>()
 				{
-					new Location(DEFAULT_ENTRY),
-					new Location("None")
+					new Location(DEFAULT_ENTRY, false),
+					new Location("None", true)
 				};
 			}
 			return false;
+		}
+
+		private void NotifyPropertyChanged(string propertyName)
+		{
+			PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
 	}
 }

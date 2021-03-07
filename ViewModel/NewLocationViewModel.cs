@@ -26,7 +26,7 @@ namespace Food_Storage_Inventory.ViewModel
 					return;
 				}
 
-				Location newLocation = new Location(NewLocation);
+				Location newLocation = new Location(NewLocation, true);
 				bool success = LocationRepository.Instance.AddNewLocation(newLocation);
 
 				if (success)

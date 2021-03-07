@@ -26,5 +26,7 @@ namespace Food_Storage_Inventory.Views
 				NavigationService.Navigate(new GeneralInventoryWindow());
 			}
 		}
+
+		private void EditItems(object sender, RoutedEventArgs e) => NavigationService.Navigate(new EditItems());
 	}
 }

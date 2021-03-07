@@ -134,7 +134,7 @@ namespace Food_Storage_Inventory.ViewModel
 
 			UpdateFeedbackText("Item Added Successfully");
 
-			FoodItem newFoodItem = new FoodItem(NewItemName, int.Parse(NewItemQuantity), SelectedContainer);
+			FoodItem newFoodItem = new FoodItem(NewItemName, int.Parse(NewItemQuantity), SelectedContainer, true);
 			LocationRepository.Instance.SelectedLocation.AddItem(newFoodItem);
 			LocationRepository.Instance.SelectedFoodItem = newFoodItem;
 		}

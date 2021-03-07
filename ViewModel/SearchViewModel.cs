@@ -30,10 +30,10 @@ namespace Food_Storage_Inventory.ViewModel
 
 			SearchResults.Clear();
 
-			foreach (Location location in LocationRepository.Instance.Locations.Where(x => x.Name != LocationRepository.DEFAULT_ENTRY))
+			foreach (Location location in LocationRepository.Instance.Locations.Where(x => x.Visible))
 			{
-				var validFoodItems = location.StoredFoodItems.Where(x => x.Name.ToLowerInvariant().Contains(lowerText) && x.Name != FoodItemRepository.DEFAULT_NAME);
-				Location newLocation = new Location(location.Name) { StoredFoodItems = new ObservableCollection<FoodItem>(validFoodItems) };
+				var validFoodItems = location.ValidFoodItems.Where(x => x.Name.ToLowerInvariant().Contains(lowerText));
+				Location newLocation = new Location(location.Name, true) { StoredFoodItems = new ObservableCollection<FoodItem>(validFoodItems) };
 				SearchResults.Add(newLocation);
 			}
 		}

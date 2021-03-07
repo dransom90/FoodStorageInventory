@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Food_Storage_Inventory.Model;
 
@@ -6,22 +6,28 @@ namespace Food_Storage_Inventory.ViewModel
 {
 	public class OverviewViewModel
 	{
-		public ObservableCollection<Location> Locations { get; set; }
+		public string Report => CompileReport();
 
-		public OverviewViewModel()
+		private string CompileReport()
 		{
-			Locations = new ObservableCollection<Location>();
-			CopyCollection();
-		}
+			HashSet<string> containers = new HashSet<string>();
+			HashSet<FoodItem> foodItems = new HashSet<FoodItem>();
 
-		private void CopyCollection()
-		{
-			foreach (Location location in LocationRepository.Instance.Locations.Where(x => x.Name != LocationRepository.DEFAULT_ENTRY))
+			int total = 0;
+
+			foreach (Location location in LocationRepository.Instance.VisibleLocations)
 			{
-				var validFoodItems = location.StoredFoodItems.Where(x => x.Name != FoodItemRepository.DEFAULT_NAME);
-				Location newLocation = new Location(location.Name) { StoredFoodItems = new ObservableCollection<FoodItem>(validFoodItems) };
-				Locations.Add(newLocation);
+				foreach (FoodItem foodItem in location.ValidFoodItems)
+				{
+					containers.Add(foodItem.Container);
+					foodItems.Add(foodItem);
+					total += foodItem.Quantity;
+				}
 			}
+
+			var usedLocations = LocationRepository.Instance.VisibleLocations.Where(x => x.ValidFoodItems.Any()).Count();
+
+			return $"You have {foodItems.Count} food items stored in {containers.Count} types of containers in {usedLocations} locations.\nYou have {total} individual items";
 		}
 	}
 }
