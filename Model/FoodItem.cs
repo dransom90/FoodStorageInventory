@@ -8,7 +8,11 @@ namespace Food_Storage_Inventory.Model
 		public string Name { get => ToString(); }
 		public int Quantity { get; set; }
 		public string Container { get; set; }
+		public DateTime Date { get; set; }
 		public bool Visible { get; private set; }
+		public string DisplayDate => Date.ToShortDateString();
+
+		public string Overview => $"({Quantity}): {_name}, {Container}, {DisplayDate}";
 
 		public override string ToString() => $"{_name}";
 
@@ -40,11 +44,12 @@ namespace Food_Storage_Inventory.Model
 		/// <param name="quantity">How many currently exist?</param>
 		/// <param name="container">Describe the container</param>
 		/// <param name="visible">Should this be visible in searches?</param>
-		public FoodItem(string name, int quantity, string container, bool visible)
+		public FoodItem(string name, int quantity, string container, DateTime dateTime, bool visible)
 		{
 			_name = name ?? throw new ArgumentNullException(nameof(name));
 			Quantity = quantity;
 			Container = container ?? throw new ArgumentNullException(nameof(container));
+			Date = dateTime;
 			Visible = visible;
 		}
 	}

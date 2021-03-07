@@ -23,5 +23,14 @@ namespace Food_Storage_Inventory.Views
 		{
 			InitializeComponent();
 		}
+
+		private void TreeViewItem_Selected(object sender, RoutedEventArgs e)
+		{
+			if (sender is TreeViewItem item)
+			{
+				item.BringIntoView();
+				e.Handled = true;
+			}
+		}
 	}
 }

@@ -6,11 +6,28 @@
 	  xmlns:VM="clr-namespace:Food_Storage_Inventory.ViewModel"
 	  mc:Ignorable="d"
 	  d:DesignHeight="450" d:DesignWidth="800"
-	  Title="Food Storage Inventory">
+	  Title="Food Storage Inventory"
+	  WindowTitle="Main Menu"
+	  Background="DimGray">
 
 	<Page.DataContext>
 		<VM:MainMenuViewModel />
 	</Page.DataContext>
+
+	<Page.Resources>
+		<Style TargetType="Button" x:Key="RoundedButton">
+			<Setter Property="BorderBrush" Value="White" />
+			<Setter Property="BorderThickness" Value="2" />
+			<Setter Property="Margin" Value="5" />
+			<Setter Property="Height" Value="50" />
+			<Setter Property="Background" Value="LightBlue" />
+			<Style.Resources>
+				<Style TargetType="Border">
+					<Setter Property="CornerRadius" Value="6" />
+				</Style>
+			</Style.Resources>
+		</Style>
+	</Page.Resources>
 
 	<Grid>
 		<Grid.RowDefinitions>
@@ -25,8 +42,11 @@
 				<MenuItem Header="B_ack Up" Command="{Binding BackUpCommand}" IsEnabled="False" />
 				<MenuItem Header="E_xit" Command="{Binding ExitProgramCommand}" />
 			</MenuItem>
-			<MenuItem Header=" _Settings" />
-			<MenuItem Header=" _Help" />
+			<MenuItem Header=" _Settings" IsEnabled="False" />
+			<MenuItem Header=" _Help">
+				<MenuItem Header="Mode Descriptions" Click="DescriptionClick" />
+				<MenuItem Header="About" Click="AboutClick" />
+			</MenuItem>
 		</Menu>
 
 		<Grid Grid.Row="1">
@@ -43,10 +63,11 @@
 				<ColumnDefinition Width="1*" />
 				<ColumnDefinition Width="1*" />
 			</Grid.ColumnDefinitions>
-			<Button Grid.Row="1" Grid.Column="1" Margin="10" Click="OverviewClick">General Information</Button>
-			<Button Grid.Row="2" Grid.Column="1" Margin="10" Click="SearchClick">Search</Button>
-			<Button Grid.Row="3" Grid.Column="1" Margin="10" Click="InventoryClick">General Inventory Count</Button>
-			<Button Grid.Row="4" Grid.Column="1" Margin="10" Click="EditItems">Edit Items</Button>
+
+			<Button Style="{DynamicResource RoundedButton}" Grid.Row="1" Grid.Column="1" FontSize="20" Click="OverviewClick">General Information</Button>
+			<Button Style="{DynamicResource RoundedButton}" Grid.Row="2" Grid.Column="1" FontSize="20" Click="SearchClick">Search</Button>
+			<Button Style="{DynamicResource RoundedButton}" Grid.Row="3" Grid.Column="1" FontSize="18" Click="InventoryClick">General Inventory Count</Button>
+			<Button Style="{DynamicResource RoundedButton}" Grid.Row="4" Grid.Column="1" FontSize="20" Click="EditItems">Edit Items</Button>
 		</Grid>
 	</Grid>
 </Page>

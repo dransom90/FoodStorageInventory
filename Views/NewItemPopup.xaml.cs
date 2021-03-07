@@ -22,6 +22,15 @@ namespace Food_Storage_Inventory.Views
 		public NewItemPopup()
 		{
 			InitializeComponent();
+			DisableFutureDates();
+		}
+
+		private void DisableFutureDates()
+		{
+			var tomorrow = DateTime.Now.AddDays(1);
+			var forever = tomorrow.AddYears(1000);
+
+			datePicker.BlackoutDates.Add(new CalendarDateRange(tomorrow, forever));
 		}
 	}
 }

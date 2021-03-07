@@ -60,6 +60,7 @@ namespace Food_Storage_Inventory.Views
 
 		private void UIntegerUpDown_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
 		{
+			LocationRepository.Instance.SaveToFile();
 		}
 
 		private void StackPanel_MouseEnter(object sender, MouseEventArgs e)
@@ -68,6 +69,11 @@ namespace Food_Storage_Inventory.Views
 			{
 				stackPanel.Focus();
 			}
+		}
+
+		private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+		{
+			LocationRepository.Instance.SaveToFile();
 		}
 	}
 }

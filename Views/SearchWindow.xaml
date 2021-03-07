@@ -7,27 +7,31 @@
 		xmlns:model="clr-namespace:Food_Storage_Inventory.Model"
 		xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 		mc:Ignorable="d"
-		Title="SearchWindow" Height="450" Width="800">
+		Title="SearchWindow" Height="450" Width="800"
+		WindowTitle="Search"
+	  Background="DimGray">
 
 	<Page.DataContext>
 		<VM:SearchViewModel />
 	</Page.DataContext>
 
 	<StackPanel Orientation="Vertical" Margin="10">
-		<TextBox x:Name="SearchBar" Margin="5" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Search Here" />
+		<TextBox Background="LightBlue" x:Name="SearchBar" Margin="5" Height="30" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Search Here" TextAlignment="Left" VerticalContentAlignment="Center"/>
 		<TreeView Name="treeView" ItemsSource="{Binding SearchResults}" Grid.Row="1" Grid.ColumnSpan="2">
 			<TreeView.Resources>
 				<HierarchicalDataTemplate DataType="{x:Type model:Location}" ItemsSource="{Binding StoredFoodItems}">
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="{Binding Name}" />
-					</StackPanel>
+					<Border CornerRadius="6" BorderBrush="White" Background="LightBlue" BorderThickness="2" Margin="10">
+						<StackPanel Background="LightBlue" Orientation="Horizontal" Height="50">
+							<TextBlock Text="{Binding Name}" VerticalAlignment="Center" Margin="5" FontSize="16"/>
+						</StackPanel>
+					</Border>
 				</HierarchicalDataTemplate>
 				<DataTemplate DataType="{x:Type model:FoodItem}">
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="{Binding Name}" Margin="5" />
-						<TextBlock Text="{Binding Container}" Margin="5" />
-						<TextBlock Text="{Binding Quantity}" Margin="5" />
-					</StackPanel>
+					<Border CornerRadius="6" BorderBrush="Gray" Background="White" BorderThickness="2">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="{Binding Overview}" Margin="5" FontSize="15"/>
+						</StackPanel>
+					</Border>
 				</DataTemplate>
 			</TreeView.Resources>
 		</TreeView>

@@ -1,0 +1,20 @@
+﻿Food Storage Inventory
+
+
+winexe
+C#
+.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\
+Food_Storage_Inventory
+none
+false
+DEBUG;TRACE
+D:\Repositories\FoodStorageInventory\App.xaml
+101193446621
+
+281162952577
+140296685480
+MainWindow.xaml;Views\About.xaml;Views\Descriptions.xaml;Views\EditItems.xaml;Views\HomePage.xaml;Views\NewItemPopup.xaml;Views\GeneralInventoryWindow.xaml;Views\NewLocationWindow.xaml;Views\OverviewWindow.xaml;Views\SearchWindow.xaml;
+
+False
+

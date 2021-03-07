@@ -14,6 +14,7 @@ namespace Food_Storage_Inventory.ViewModel
 			HashSet<FoodItem> foodItems = new HashSet<FoodItem>();
 
 			int total = 0;
+			int empty = 0;
 
 			foreach (Location location in LocationRepository.Instance.VisibleLocations)
 			{
@@ -22,12 +23,17 @@ namespace Food_Storage_Inventory.ViewModel
 					containers.Add(foodItem.Container);
 					foodItems.Add(foodItem);
 					total += foodItem.Quantity;
+
+					if (foodItem.Quantity == 0)
+						empty++;
 				}
 			}
 
 			var usedLocations = LocationRepository.Instance.VisibleLocations.Where(x => x.ValidFoodItems.Any()).Count();
 
-			return $"You have {foodItems.Count} food items stored in {containers.Count} types of containers in {usedLocations} locations.\nYou have {total} individual items";
+			return $"You have {foodItems.Count} food items stored in {containers.Count} types of containers in {usedLocations} locations.\n" +
+				$"You have {total} individual items.\n" +
+				$"You have {empty} items with a quantity of zero.";
 		}
 	}
 }

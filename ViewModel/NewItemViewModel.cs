@@ -64,6 +64,8 @@ namespace Food_Storage_Inventory.ViewModel
 			}
 		}
 
+		public DateTime SelectedDate { get; set; }
+
 		public ObservableCollection<string> AvailableContainers { get; set; }
 
 		public ICommand AddNewItemCommand => new DelegateCommand<object>(OnNewItemExecuted);
@@ -134,7 +136,7 @@ namespace Food_Storage_Inventory.ViewModel
 
 			UpdateFeedbackText("Item Added Successfully");
 
-			FoodItem newFoodItem = new FoodItem(NewItemName, int.Parse(NewItemQuantity), SelectedContainer, true);
+			FoodItem newFoodItem = new FoodItem(NewItemName, int.Parse(NewItemQuantity), SelectedContainer, SelectedDate, true);
 			LocationRepository.Instance.SelectedLocation.AddItem(newFoodItem);
 			LocationRepository.Instance.SelectedFoodItem = newFoodItem;
 		}

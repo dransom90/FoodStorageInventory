@@ -7,6 +7,7 @@
 		xmlns:VM="clr-namespace:Food_Storage_Inventory.ViewModel"
 		xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 		xmlns:number="http://schemas.xceed.com/wpf/xaml/toolkit"
+		xmlns:sys="clr-namespace:System;assembly=mscorlib"
 		mc:Ignorable="d"
 		Title="Add New Item" Height="450" Width="800">
 
@@ -35,8 +36,10 @@
 		<number:IntegerUpDown Grid.Row="1" Grid.Column="2" Height="25" Margin="10" Minimum="0" Text="{Binding NewItemQuantity}" />
 
 		<Label Grid.Row="2" Grid.Column="0" Margin="10">Item Container:</Label>
-		<ComboBox Grid.Row="2" Grid.Column="1" Margin="10" ItemsSource="{Binding AvailableContainers}" SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SelectedContainer, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="-- Select A Container --" Focusable="True">
-		</ComboBox>
+		<ComboBox Grid.Row="2" Grid.Column="1" Margin="10" ItemsSource="{Binding AvailableContainers}" SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SelectedContainer, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="-- Select A Container --" Focusable="True"></ComboBox>
+
+		<Label Grid.Row="3" Grid.Column="0" Margin="10">Date</Label>
+		<DatePicker x:Name="datePicker" Grid.Row="3" Grid.Column="1" Margin="42,26,0,0" Height="25" HorizontalAlignment="Left" Width="115" SelectedDate="{Binding SelectedDate}"></DatePicker>
 
 		<WrapPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0, 15, 0, 0">
 			<Button IsDefault="True" Name="addNewBtn" Command="{Binding AddNewItemCommand}" MinWidth="60" Margin="0,0,10,0">Add</Button>

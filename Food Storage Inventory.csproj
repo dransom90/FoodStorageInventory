@@ -278,12 +278,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AboutViewModel.cs" />
     <Compile Include="ViewModel\EditItemsViewModel.cs" />
     <Compile Include="ViewModel\MainMenuViewModel.cs" />
     <Compile Include="ViewModel\NewItemViewModel.cs" />
     <Compile Include="ViewModel\NewLocationViewModel.cs" />
     <Compile Include="ViewModel\OverviewViewModel.cs" />
     <Compile Include="ViewModel\SearchViewModel.cs" />
+    <Compile Include="Views\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Descriptions.xaml.cs">
+      <DependentUpon>Descriptions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditItems.xaml.cs">
       <DependentUpon>EditItems.xaml</DependentUpon>
     </Compile>
@@ -311,7 +318,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\FoodItem.cs" />
-    <Compile Include="Model\FoodItemRepository.cs" />
     <Compile Include="Views\NewItemPopup.xaml.cs">
       <DependentUpon>NewItemPopup.xaml</DependentUpon>
     </Compile>
@@ -320,6 +326,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Descriptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EditItems.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

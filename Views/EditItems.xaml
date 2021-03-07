@@ -9,7 +9,9 @@
 	xmlns:local="clr-namespace:Food_Storage_Inventory.Views"
 	mc:Ignorable="d"
 	d:DesignHeight="450" d:DesignWidth="800"
-	Title="EditItems">
+	Title="EditItems"
+	WindowTitle="EDIT"
+	Background="DimGray">
 
 	<Page.DataContext>
 		<VM:EditItemsViewModel />
@@ -24,21 +26,23 @@
 				<SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="Black" />
 
 				<HierarchicalDataTemplate DataType="{x:Type model:Location}" ItemsSource="{Binding ValidFoodItems}">
-					<Border BorderThickness="2" BorderBrush="Gray" Background="LightGray" CornerRadius="6">
-						<StackPanel Orientation="Horizontal" Margin="5">
-							<TextBlock Name="CurrentLocation" Text="{Binding Name}" />
+					<Border CornerRadius="6" BorderBrush="White" Background="PowderBlue" BorderThickness="2" Margin="10">
+						<StackPanel Orientation="Horizontal" Margin="5" Height="30">
+							<TextBlock Name="CurrentLocation" Text="{Binding Name}" VerticalAlignment="Center" FontSize="16" />
 						</StackPanel>
 					</Border>
 				</HierarchicalDataTemplate>
 
 				<DataTemplate DataType="{x:Type model:FoodItem}">
-					<Border CornerRadius="6" BorderBrush="Purple" Background="Lime" BorderThickness="4">
+					<Border CornerRadius="6" BorderBrush="Gray" Background="White" BorderThickness="2">
 						<StackPanel Orientation="Horizontal">
-							<TextBlock x:Name="Item" Text="{Binding Name}" Margin="5" />
-							<TextBlock Text="{Binding Container}" Margin="5" />
-							<TextBlock Text="{Binding Quantity}" Margin="5" />
-							<number:UIntegerUpDown Text="{Binding Quantity}" Margin="5" Minimum="0" ValueChanged="UIntegerUpDown_ValueChanged" />
-							<Label BorderBrush="Black" BorderThickness="2" Margin="5">Save</Label>
+							<TextBlock Text="{Binding Quantity}" Margin="5" FontSize="15" VerticalAlignment="Center" />
+							<TextBlock x:Name="Item" Text="{Binding Name}" Margin="5" FontSize="15" VerticalAlignment="Center" />
+							<TextBlock Text="{Binding Container}" Margin="5" FontSize="15" VerticalAlignment="Center" />
+							<TextBlock Text="{Binding Date}" Margin="5" FontSize="15" VerticalAlignment="Center" />
+							<number:UIntegerUpDown Text="{Binding Quantity}" Margin="5" Minimum="0" ValueChanged="UIntegerUpDown_ValueChanged" FontSize="15" />
+							<DatePicker DisplayDateStart="2020-01-01" SelectedDate="{Binding Date}" Margin="5" SelectedDateChanged="DatePicker_SelectedDateChanged"></DatePicker>
+							<Label Foreground="White" Background="DimGray" BorderBrush="Black" BorderThickness="2" Margin="5" FontSize="15">Save</Label>
 						</StackPanel>
 					</Border>
 				</DataTemplate>

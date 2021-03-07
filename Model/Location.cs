@@ -30,7 +30,7 @@ namespace Food_Storage_Inventory.Model
 			{
 				StoredFoodItems = new ObservableCollection<FoodItem>()
 				{
-					new FoodItem(DEFAULT_FOOD_ITEM, 0, "NONE", false)
+					new FoodItem(DEFAULT_FOOD_ITEM, 0, "NONE", DateTime.Now, false)
 				};
 			}
 
@@ -38,7 +38,7 @@ namespace Food_Storage_Inventory.Model
 
 			if (!names.Any())
 			{
-				StoredFoodItems.Add(new FoodItem(DEFAULT_FOOD_ITEM, 0, "NONE", false));
+				StoredFoodItems.Add(new FoodItem(DEFAULT_FOOD_ITEM, 0, "NONE", DateTime.Now, false));
 			}
 		}
 

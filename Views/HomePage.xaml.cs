@@ -28,5 +28,15 @@ namespace Food_Storage_Inventory.Views
 		}
 
 		private void EditItems(object sender, RoutedEventArgs e) => NavigationService.Navigate(new EditItems());
+
+		private void AboutClick(object sender, RoutedEventArgs e)
+		{
+			NavigationService.Navigate(new About());
+		}
+
+		private void DescriptionClick(object sender, RoutedEventArgs e)
+		{
+			NavigationService.Navigate(new Descriptions());
+		}
 	}
 }
