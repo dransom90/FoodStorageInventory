@@ -303,8 +303,8 @@
     <Compile Include="Views\NewLocationWindow.xaml.cs">
       <DependentUpon>NewLocationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\OverviewWindow.xaml.cs">
-      <DependentUpon>OverviewWindow.xaml</DependentUpon>
+    <Compile Include="Views\ReportsPage.xaml.cs">
+      <DependentUpon>ReportsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SearchWindow.xaml.cs">
       <DependentUpon>SearchWindow.xaml</DependentUpon>
@@ -354,7 +354,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\OverviewWindow.xaml">
+    <Page Include="Views\ReportsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

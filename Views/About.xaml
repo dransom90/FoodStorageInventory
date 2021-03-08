@@ -8,14 +8,21 @@
 	  mc:Ignorable="d"
 	  d:DesignHeight="450" d:DesignWidth="800"
 	  Title="About"
-	  WindowTitle="About">
+	  WindowTitle="About"
+	  Background="DimGray">
 
 	<Page.DataContext>
 		<VM:AboutViewModel />
 	</Page.DataContext>
 
 	<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-		<TextBlock HorizontalAlignment="Center">Version: 2.0</TextBlock>
-		<TextBlock>Special thanks to the very creative people at www.flaticon.com/authors!</TextBlock>
+		<TextBlock HorizontalAlignment="Center">
+			<TextBlock.Inlines>
+				<Run FontWeight="Bold" FontSize="18" Text="Version: 2.0" />
+			</TextBlock.Inlines>
+		</TextBlock>
+		<Separator/>
+		<TextBlock FontSize="14" Foreground="LightBlue">Special thanks to the very creative people at www.flaticon.com/authors!</TextBlock>
+		<TextBlock FontSize="14" Foreground="LightBlue">An even bigger thank you to Sam, who made this program look good.</TextBlock>
 	</StackPanel>
 </Page>

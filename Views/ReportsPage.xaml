@@ -1,0 +1,53 @@
+﻿<Page x:Class="Food_Storage_Inventory.Views.ReportsPage"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:VM="clr-namespace:Food_Storage_Inventory.ViewModel"
+		xmlns:model="clr-namespace:Food_Storage_Inventory.Model"
+		mc:Ignorable="d"
+		Title="General Information"
+		Height="450"
+		Width="800"
+		WindowTitle="General Information"
+	  Background="DimGray">
+	<Page.DataContext>
+		<VM:OverviewViewModel />
+	</Page.DataContext>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Label Grid.Row="0" HorizontalAlignment="Center" FontSize="20" Foreground="LightBlue">
+			<TextBlock TextDecorations="Underline">REPORTS</TextBlock>
+		</Label>
+
+		<Border Grid.Row="1" Background="LightBlue" BorderBrush="White" BorderThickness="2" CornerRadius="6" Margin="5" MaxWidth="400" Visibility="{Binding DisplayNoReports, Converter={StaticResource InverseBoolToVisConverter}}">
+			<Label Content="{Binding NoReports}" Grid.Row="1" />
+		</Border>
+
+		<Border Grid.Row="2" Background="LightBlue" BorderBrush="White" BorderThickness="2" CornerRadius="6" Margin="5" MaxWidth="400" Visibility="{Binding DisplayFiveOrLess, Converter={StaticResource BooleanToVisibilityConverter}}">
+			<StackPanel>
+				<Label Content="{Binding LowItemReport}" FontSize="18" />
+				<ListBox ItemsSource="{Binding FiveOrLess}" FontSize="14" />
+			</StackPanel>
+		</Border>
+
+		<Border Grid.Row="3" Background="LightBlue" BorderBrush="White" BorderThickness="2" CornerRadius="6" Margin="5" MaxWidth="400" Visibility="{Binding DisplayZeroItems, Converter={StaticResource BooleanToVisibilityConverter}}">
+			<StackPanel>
+				<Label Content="{Binding ZeroItemReport}" Grid.Row="4" FontSize="18" />
+				<ListBox Grid.Row="5" ItemsSource="{Binding ZeroItems}" FontSize="14" />
+			</StackPanel>
+		</Border>
+	</Grid>
+</Page>

@@ -14,7 +14,7 @@ namespace Food_Storage_Inventory.Views
 			InitializeComponent();
 		}
 
-		private void OverviewClick(object sender, RoutedEventArgs e) => NavigationService.Navigate(new OverviewWindow());
+		private void OverviewClick(object sender, RoutedEventArgs e) => NavigationService.Navigate(new ReportsPage());
 
 		private void SearchClick(object sender, RoutedEventArgs e) => NavigationService.Navigate(new SearchWindow());
 

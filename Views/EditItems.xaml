@@ -20,10 +20,10 @@
 	<Grid>
 		<TreeView Name="treeView" ItemsSource="{Binding Source={x:Static model:LocationRepository.Instance}, Path=VisibleLocations}" Grid.Row="1" Grid.ColumnSpan="2" SelectedItemChanged="TreeView_SelectedItemChanged">
 			<TreeView.Resources>
-				<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+				<!--<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
 				<SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
 				<SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Transparent" />
-				<SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="Black" />
+				<SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="Black" />-->
 
 				<HierarchicalDataTemplate DataType="{x:Type model:Location}" ItemsSource="{Binding ValidFoodItems}">
 					<Border CornerRadius="6" BorderBrush="White" Background="PowderBlue" BorderThickness="2" Margin="10">

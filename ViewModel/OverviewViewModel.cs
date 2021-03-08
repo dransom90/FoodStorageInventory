@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Food_Storage_Inventory.Model;
 
@@ -6,34 +7,75 @@ namespace Food_Storage_Inventory.ViewModel
 {
 	public class OverviewViewModel
 	{
-		public string Report => CompileReport();
+		public string ZeroItemReport { get; set; }
+		public string LowItemReport { get; set; }
+		public string NoReports { get; set; }
+		public bool DisplayNoReports => string.IsNullOrEmpty(NoReports);
+		public bool DisplayFiveOrLess => FiveOrLess.Any();
+		public bool DisplayZeroItems => ZeroItems.Any();
+		public ObservableCollection<string> ZeroItems { get; set; }
+		public ObservableCollection<string> FiveOrLess { get; set; }
 
-		private string CompileReport()
+		public OverviewViewModel()
 		{
-			HashSet<string> containers = new HashSet<string>();
-			HashSet<FoodItem> foodItems = new HashSet<FoodItem>();
+			ZeroItems = new ObservableCollection<string>();
+			FiveOrLess = new ObservableCollection<string>();
+			CompileReport();
+		}
 
-			int total = 0;
+		private void CompileReport()
+		{
+			List<string> emptyItems = new List<string>();
+			List<string> lowItems = new List<string>();
+
 			int empty = 0;
 
 			foreach (Location location in LocationRepository.Instance.VisibleLocations)
 			{
 				foreach (FoodItem foodItem in location.ValidFoodItems)
 				{
-					containers.Add(foodItem.Container);
-					foodItems.Add(foodItem);
-					total += foodItem.Quantity;
-
 					if (foodItem.Quantity == 0)
+					{
+						emptyItems.Add($"{foodItem} ({location})");
 						empty++;
+					}
+					else if (foodItem.Quantity < 5)
+					{
+						lowItems.Add($"{foodItem} ({location})");
+					}
 				}
 			}
 
-			var usedLocations = LocationRepository.Instance.VisibleLocations.Where(x => x.ValidFoodItems.Any()).Count();
+			if (emptyItems.Any())
+			{
+				ZeroItemReport = $"You have used up the following items:";
+				foreach (string item in emptyItems)
+				{
+					ZeroItems.Add(item);
+					//ZeroItemReport = string.Concat(ZeroItemReport, $"\n{item}");
+				}
+			}
+			else
+			{
+				ZeroItemReport = string.Empty;
+			}
 
-			return $"You have {foodItems.Count} food items stored in {containers.Count} types of containers in {usedLocations} locations.\n" +
-				$"You have {total} individual items.\n" +
-				$"You have {empty} items with a quantity of zero.";
+			if (lowItems.Any())
+			{
+				LowItemReport = "You have 5 or less of the following items:";
+				foreach (string item in lowItems)
+				{
+					FiveOrLess.Add(item);
+					//LowItemReport = string.Concat(LowItemReport, $"\n{item}");
+				}
+			}
+			else
+			{
+				LowItemReport = string.Empty;
+			}
+
+			if (string.IsNullOrEmpty(ZeroItemReport) && string.IsNullOrEmpty(LowItemReport))
+				NoReports = "Nothing to report today!";
 		}
 	}
 }

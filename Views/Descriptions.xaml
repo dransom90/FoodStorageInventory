@@ -7,35 +7,46 @@
 	  mc:Ignorable="d"
 	  d:DesignHeight="450" d:DesignWidth="800"
 	  Title="Descriptions"
-	  WindowTitle="Mode Descriptions">
+	  WindowTitle="Mode Descriptions"
+	  Background="DimGray">
 
-	<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-		<TextBlock TextDecorations="Underline" HorizontalAlignment="Center" Margin="5">
-			<TextBlock.Inlines>
-				<Run FontWeight="Bold" FontSize="14" Text="General Inventory" />
-			</TextBlock.Inlines>
-		</TextBlock>
-		<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap">This mode resets all quantities to 0.  As you move through each location, update each Food Item's Quantity to the new running total.  For example, you are inventorying the Kitchen.  You come across two new Pint Jars of Black Beans and you have already found three.  Set the total to 5.  </TextBlock>
+	<Page.Resources>
+		<Style TargetType="TextBlock" x:Key="Description">
+			<Setter Property="FontSize" Value="16" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
+			<Setter Property="TextWrapping" Value="Wrap" />
+		</Style>
+	</Page.Resources>
 
-		<TextBlock TextDecorations="Underline" HorizontalAlignment="Center" Margin="5,20, 5, 10">
-			<TextBlock.Inlines>
-				<Run FontWeight="Bold" FontSize="14" Text="General Information" />
-			</TextBlock.Inlines>
-		</TextBlock>
-		<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap">This mode simply allows you to view all of your stored Food Items.  It also displays a few simple statistics.</TextBlock>
+	<Border BorderBrush="White" BorderThickness="5" CornerRadius="2">
+		<StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<TextBlock TextDecorations="Underline" HorizontalAlignment="Center" Margin="5">
+				<TextBlock.Inlines>
+					<Run FontWeight="Bold" FontSize="18" Text="General Inventory" />
+				</TextBlock.Inlines>
+			</TextBlock>
+			<TextBlock Style="{DynamicResource Description}">This mode resets all quantities to 0.  As you move through each location, update each Food Item's Quantity to the new running total.  For example, you are inventorying the Kitchen.  You come across two new Pint Jars of Black Beans and you have already found three.  Set the total to 5.</TextBlock>
 
-		<TextBlock TextDecorations="Underline" HorizontalAlignment="Center" Margin="5,20, 5, 10">
-			<TextBlock.Inlines>
-				<Run FontWeight="Bold" FontSize="14" Text="Search" />
-			</TextBlock.Inlines>
-		</TextBlock>
-		<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap">This mode allows you to search for a specific Food Item by name.  Search results include matches across all Locations.</TextBlock>
+			<TextBlock TextDecorations="Underline" HorizontalAlignment="Center" Margin="5,20, 5, 10">
+				<TextBlock.Inlines>
+					<Run FontWeight="Bold" FontSize="18" Text="General Information" />
+				</TextBlock.Inlines>
+			</TextBlock>
+			<TextBlock Style="{DynamicResource Description}">This mode simply allows you to view all of your stored Food Items.  It also displays a few simple statistics.</TextBlock>
 
-		<TextBlock TextDecorations="Underline" HorizontalAlignment="Center" Margin="5,20, 5, 10">
-			<TextBlock.Inlines>
-				<Run FontWeight="Bold" FontSize="14" Text="Edit Items" />
-			</TextBlock.Inlines>
-		</TextBlock>
-		<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap">This mode displays all stored Food Items.  It also allows you to edit individual properties of each Item.</TextBlock>
-	</StackPanel>
+			<TextBlock TextDecorations="Underline" HorizontalAlignment="Center" Margin="5,20, 5, 10">
+				<TextBlock.Inlines>
+					<Run FontWeight="Bold" FontSize="18" Text="Search" />
+				</TextBlock.Inlines>
+			</TextBlock>
+			<TextBlock Style="{DynamicResource Description}">This mode allows you to search for a specific Food Item by name.  Search results include matches across all Locations.</TextBlock>
+
+			<TextBlock TextDecorations="Underline" HorizontalAlignment="Center" Margin="5,20, 5, 10">
+				<TextBlock.Inlines>
+					<Run FontWeight="Bold" FontSize="18" Text="Edit Items" />
+				</TextBlock.Inlines>
+			</TextBlock>
+			<TextBlock Style="{DynamicResource Description}">This mode displays all stored Food Items.  It also allows you to edit individual properties of each Item.</TextBlock>
+		</StackPanel>
+	</Border>
 </Page>
