@@ -3,3 +3,9 @@
 obj/Release/Food Storage Inventory.csproj.CoreCompileInputs.cache
 *.testlog
 *.testlog
+*.lref
+*.lref
+*.baml
+*.cache
+*.cache
+*.cache
