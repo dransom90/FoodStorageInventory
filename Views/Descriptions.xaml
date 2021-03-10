@@ -29,10 +29,10 @@
 
 			<TextBlock TextDecorations="Underline" HorizontalAlignment="Center" Margin="5,20, 5, 10">
 				<TextBlock.Inlines>
-					<Run FontWeight="Bold" FontSize="18" Text="General Information" />
+					<Run FontWeight="Bold" FontSize="18" Text="Reports" />
 				</TextBlock.Inlines>
 			</TextBlock>
-			<TextBlock Style="{DynamicResource Description}">This mode simply allows you to view all of your stored Food Items.  It also displays a few simple statistics.</TextBlock>
+			<TextBlock Style="{DynamicResource Description}" HorizontalAlignment="Center">This mode reports when you have five or less of a specific Food Item.  It also alerts you when a Food Item has been depleted.</TextBlock>
 
 			<TextBlock TextDecorations="Underline" HorizontalAlignment="Center" Margin="5,20, 5, 10">
 				<TextBlock.Inlines>

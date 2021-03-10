@@ -9,11 +9,22 @@
 		Title="General Information"
 		Height="450"
 		Width="800"
-		WindowTitle="General Information"
+		WindowTitle="Reports"
 	  Background="DimGray">
 	<Page.DataContext>
 		<VM:OverviewViewModel />
 	</Page.DataContext>
+
+	<Page.Resources>
+		<Style x:Key="BorderStyle" TargetType="{x:Type Border}">
+			<Setter Property="BorderBrush" Value="White" />
+			<Setter Property="BorderThickness" Value="2" />
+			<Setter Property="Margin" Value="5" />
+			<Setter Property="Background" Value="LightBlue" />
+			<Setter Property="MaxWidth" Value="400" />
+			<Setter Property="CornerRadius" Value="6" />
+		</Style>
+	</Page.Resources>
 
 	<Grid>
 		<Grid.RowDefinitions>
@@ -32,18 +43,18 @@
 			<TextBlock TextDecorations="Underline">REPORTS</TextBlock>
 		</Label>
 
-		<Border Grid.Row="1" Background="LightBlue" BorderBrush="White" BorderThickness="2" CornerRadius="6" Margin="5" MaxWidth="400" Visibility="{Binding DisplayNoReports, Converter={StaticResource InverseBoolToVisConverter}}">
-			<Label Content="{Binding NoReports}" Grid.Row="1" />
+		<Border Grid.Row="1" Style="{DynamicResource BorderStyle}" Visibility="{Binding DisplayNoReports, Converter={StaticResource InverseBoolToVisConverter}}">
+			<Label Content="{Binding NoReports}" FontSize="18" HorizontalAlignment="Center" />
 		</Border>
 
-		<Border Grid.Row="2" Background="LightBlue" BorderBrush="White" BorderThickness="2" CornerRadius="6" Margin="5" MaxWidth="400" Visibility="{Binding DisplayFiveOrLess, Converter={StaticResource BooleanToVisibilityConverter}}">
+		<Border Grid.Row="2" Style="{DynamicResource BorderStyle}" Visibility="{Binding DisplayFiveOrLess, Converter={StaticResource BooleanToVisibilityConverter}}">
 			<StackPanel>
 				<Label Content="{Binding LowItemReport}" FontSize="18" />
 				<ListBox ItemsSource="{Binding FiveOrLess}" FontSize="14" />
 			</StackPanel>
 		</Border>
 
-		<Border Grid.Row="3" Background="LightBlue" BorderBrush="White" BorderThickness="2" CornerRadius="6" Margin="5" MaxWidth="400" Visibility="{Binding DisplayZeroItems, Converter={StaticResource BooleanToVisibilityConverter}}">
+		<Border Grid.Row="3" Style="{DynamicResource BorderStyle}" Visibility="{Binding DisplayZeroItems, Converter={StaticResource BooleanToVisibilityConverter}}">
 			<StackPanel>
 				<Label Content="{Binding ZeroItemReport}" Grid.Row="4" FontSize="18" />
 				<ListBox Grid.Row="5" ItemsSource="{Binding ZeroItems}" FontSize="14" />

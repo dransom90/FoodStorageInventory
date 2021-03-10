@@ -16,7 +16,7 @@
 	</Page.DataContext>
 
 	<StackPanel Orientation="Vertical" Margin="10">
-		<TextBox Background="LightBlue" x:Name="SearchBar" Margin="5" Height="30" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Search Here" TextAlignment="Left" VerticalContentAlignment="Center" />
+		<TextBox FontSize="20" Background="LightBlue" x:Name="SearchBar" Margin="5" Height="37" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Search Here" TextAlignment="Left" VerticalContentAlignment="Center" />
 		<TreeView Name="treeView" ItemsSource="{Binding SearchResults}" Grid.Row="1" Grid.ColumnSpan="2">
 			<TreeView.Resources>
 				<HierarchicalDataTemplate DataType="{x:Type model:Location}" ItemsSource="{Binding StoredFoodItems}">

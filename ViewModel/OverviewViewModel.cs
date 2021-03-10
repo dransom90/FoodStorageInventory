@@ -39,7 +39,7 @@ namespace Food_Storage_Inventory.ViewModel
 						emptyItems.Add($"{foodItem} ({location})");
 						empty++;
 					}
-					else if (foodItem.Quantity < 5)
+					else if (foodItem.Quantity <= 5)
 					{
 						lowItems.Add($"{foodItem} ({location})");
 					}
@@ -52,7 +52,6 @@ namespace Food_Storage_Inventory.ViewModel
 				foreach (string item in emptyItems)
 				{
 					ZeroItems.Add(item);
-					//ZeroItemReport = string.Concat(ZeroItemReport, $"\n{item}");
 				}
 			}
 			else
@@ -66,7 +65,6 @@ namespace Food_Storage_Inventory.ViewModel
 				foreach (string item in lowItems)
 				{
 					FiveOrLess.Add(item);
-					//LowItemReport = string.Concat(LowItemReport, $"\n{item}");
 				}
 			}
 			else
