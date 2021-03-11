@@ -10,14 +10,12 @@ D:\Repositories\FoodStorageInventory\bin\Release\Prism.Wpf.xml
 D:\Repositories\FoodStorageInventory\bin\Release\System.Diagnostics.DiagnosticSource.xml
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.csprojAssemblyReference.cache
 D:\Repositories\FoodStorageInventory\obj\Release\MainWindow.g.cs
-D:\Repositories\FoodStorageInventory\obj\Release\NewItemPopup.g.cs
 D:\Repositories\FoodStorageInventory\obj\Release\App.g.cs
 D:\Repositories\FoodStorageInventory\obj\Release\GeneratedInternalTypeHelper.g.cs
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory_MarkupCompile.cache
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory_MarkupCompile.lref
 D:\Repositories\FoodStorageInventory\obj\Release\App.baml
 D:\Repositories\FoodStorageInventory\obj\Release\MainWindow.baml
-D:\Repositories\FoodStorageInventory\obj\Release\NewItemPopup.baml
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.g.resources
 D:\Repositories\FoodStorageInventory\obj\Release\Food_Storage_Inventory.Properties.Resources.resources
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.csproj.GenerateResource.cache
@@ -26,3 +24,22 @@ D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.csproj.F
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.csproj.CopyComplete
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.exe
 D:\Repositories\FoodStorageInventory\obj\Release\Food Storage Inventory.pdb
+D:\Repositories\FoodStorageInventory\obj\Release\Views\About.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\Views\Descriptions.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\Views\EditItems.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\Views\HomePage.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\Views\NewItemPopup.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\Views\GeneralInventoryWindow.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\Views\NewLocationWindow.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\Views\ReportsPage.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\Views\SearchWindow.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\Views\About.baml
+D:\Repositories\FoodStorageInventory\obj\Release\Views\Descriptions.baml
+D:\Repositories\FoodStorageInventory\obj\Release\Views\EditItems.baml
+D:\Repositories\FoodStorageInventory\obj\Release\Views\HomePage.baml
+D:\Repositories\FoodStorageInventory\obj\Release\Views\NewItemPopup.baml
+D:\Repositories\FoodStorageInventory\obj\Release\Views\GeneralInventoryWindow.baml
+D:\Repositories\FoodStorageInventory\obj\Release\Views\NewLocationWindow.baml
+D:\Repositories\FoodStorageInventory\obj\Release\Views\ReportsPage.baml
+D:\Repositories\FoodStorageInventory\obj\Release\Views\SearchWindow.baml
+D:\Repositories\FoodStorageInventory\obj\Release\Food_Storage_Inventory.Resources.resources
