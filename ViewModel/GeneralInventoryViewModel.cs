@@ -9,6 +9,7 @@ namespace Food_Storage_Inventory.ViewModel
 {
 	public class GeneralInventoryViewModel : INotifyPropertyChanged
 	{
+		private bool displayContinue = false;
 		private bool errorTextVisible = false;
 		private Location selectedLocation;
 		private string quantityText;
@@ -57,21 +58,42 @@ namespace Food_Storage_Inventory.ViewModel
 			}
 		}
 
+		public bool DisplayContinue
+		{
+			get => displayContinue;
+			set
+			{
+				if (displayContinue == value)
+					return;
+				displayContinue = value;
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayContinue)));
+			}
+		}
+
 		public ICommand SaveCommand => new DelegateCommand<object>(OnSaveExecuted);
 
 		public ICommand LocationSelectionChangedCommand => new DelegateCommand<object>(OnSelectedLocationChanged);
 		public ICommand ItemSelectionChangedCommand => new DelegateCommand<object>(OnSelectedItemChanged);
+		public ICommand ContinueCommand => new DelegateCommand<object>(OnCommandExecuted);
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public GeneralInventoryViewModel()
 		{
+			DisplayContinue = true;
+			LocationRepository.Instance.SelectedFoodItem = null;
+			LocationRepository.Instance.SelectedLocation = null;
+		}
+
+		private void OnCommandExecuted(object context)
+		{
+			DisplayContinue = false;
 			LocationRepository.Instance.ResetAllQuantities();
 		}
 
 		private void OnSaveExecuted(object context)
 		{
-			if (LocationRepository.Instance.SelectedFoodItem is null && LocationRepository.Instance.SelectedLocation is null)
+			if (LocationRepository.Instance.SelectedFoodItem is null || LocationRepository.Instance.SelectedLocation is null)
 			{
 				ErrorTextVisible = true;
 				return;
@@ -85,6 +107,7 @@ namespace Food_Storage_Inventory.ViewModel
 			}
 
 			SetQuantityText();
+			ErrorTextVisible = false;
 			LocationRepository.Instance.SaveToFile();
 		}
 

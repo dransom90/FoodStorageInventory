@@ -11,51 +11,97 @@
 	<UserControl.DataContext>
 		<VM:GeneralInventoryViewModel />
 	</UserControl.DataContext>
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="*" />
-			<RowDefinition Height="Auto" />
-		</Grid.RowDefinitions>
 
-		<Grid Grid.Row="1">
+	<UserControl.Resources>
+		<Style TargetType="Button" x:Key="RoundedButton">
+			<Setter Property="BorderBrush" Value="White" />
+			<Setter Property="BorderThickness" Value="2" />
+			<Setter Property="Margin" Value="5" />
+			<Setter Property="Height" Value="50" />
+			<Setter Property="Background" Value="LightBlue" />
+			<Style.Resources>
+				<Style TargetType="Border">
+					<Setter Property="CornerRadius" Value="6" />
+				</Style>
+			</Style.Resources>
+		</Style>
+
+		<Style x:Key="BorderStyle" TargetType="{x:Type Border}">
+			<Setter Property="BorderBrush" Value="White" />
+			<Setter Property="BorderThickness" Value="2" />
+			<Setter Property="Margin" Value="5" />
+			<Setter Property="Background" Value="Orange" />
+			<Setter Property="MaxWidth" Value="400" />
+			<Setter Property="CornerRadius" Value="6" />
+		</Style>
+	</UserControl.Resources>
+
+	<Grid>
+		<Grid Visibility="{Binding DisplayContinue, Converter={StaticResource BooleanToVisibilityConverter}}">
+			<StackPanel VerticalAlignment="Center">
+				<Border Style="{StaticResource BorderStyle}">
+					<TextBlock MaxWidth="280" FontSize="16" Margin="10" TextWrapping="Wrap" TextAlignment="Center" Text="Proceeding Will Reset All Items To Zero.  THIS CANNOT BE UNDONE!"></TextBlock>
+				</Border>
+				<Button FontSize="16" Margin="10" Width="150" Style="{StaticResource RoundedButton}" Command="{Binding ContinueCommand}">CONTINUE</Button>
+			</StackPanel>
+		</Grid>
+
+		<Grid Visibility="{Binding DisplayContinue, Converter={StaticResource InverseBoolToVisConverter}}">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="1*" />
-				<RowDefinition Height="1*" />
-				<RowDefinition Height="1*" />
-				<RowDefinition Height="1*" />
-				<RowDefinition Height="1*" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
+
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="1*" />
+				<ColumnDefinition />
+				<ColumnDefinition />
 			</Grid.ColumnDefinitions>
 
-			<Label Grid.Row="0" Grid.Column="0" Margin="10" Content="Select Location: " />
-			<ComboBox Grid.Row="0" Grid.Column="1" Margin="10" ItemsSource="{Binding Source={x:Static model:LocationRepository.Instance}, Path=Locations}" SelectedItem="{Binding Source={x:Static model:LocationRepository.Instance}, Path=SelectedLocation}">
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="SelectionChanged">
-						<i:InvokeCommandAction Command="{Binding LocationSelectionChangedCommand}" />
-					</i:EventTrigger>
-				</i:Interaction.Triggers>
-			</ComboBox>
+			<Border Grid.ColumnSpan="2" CornerRadius="6" BorderThickness="2" BorderBrush="Black" Margin="30,30,30,0" Background="#FFDB58">
+				<StackPanel Orientation="Horizontal" Width="500" Height="Auto" HorizontalAlignment="Center">
+					<Label FontSize="16" Grid.Row="0" Grid.Column="0" Margin="10" Content="Select Location: " VerticalAlignment="Center" />
 
-			<Label Grid.Row="1" Grid.Column="0" Margin="10" Content="Item Name: " />
-			<ComboBox Grid.Row="1" Grid.Column="1" Margin="10" ItemsSource="{Binding Source={x:Static model:LocationRepository.Instance}, Path=SelectedLocation.StoredFoodItems}" SelectedItem="{Binding Source={x:Static model:LocationRepository.Instance}, Path=SelectedFoodItem}">
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="SelectionChanged">
-						<i:InvokeCommandAction Command="{Binding ItemSelectionChangedCommand}" />
-					</i:EventTrigger>
-				</i:Interaction.Triggers>
-			</ComboBox>
+					<ComboBox FontSize="16" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Source={x:Static model:LocationRepository.Instance}, Path=Locations}" SelectedItem="{Binding Source={x:Static model:LocationRepository.Instance}, Path=SelectedLocation}">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="SelectionChanged">
+								<i:InvokeCommandAction Command="{Binding LocationSelectionChangedCommand}" />
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</ComboBox>
+				</StackPanel>
+			</Border>
 
-			<Label Grid.Row="2" Grid.Column="0" Margin="10" Content="Item Quantity" />
-			<number:IntegerUpDown Grid.Row="2" Grid.Column="2" Height="25" Margin="10" Minimum="0" Text="{Binding UpdatedQuantity}" />
+			<Border Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0" CornerRadius="6" BorderThickness="2" BorderBrush="Black" Margin="30, 30, 30, 0" Background="#FFDB58">
+				<StackPanel Orientation="Horizontal" Width="500" Height="Auto" HorizontalAlignment="Center" Margin="10">
+					<Label FontSize="16" Grid.Row="1" Grid.Column="0" Content="Item Name: " VerticalAlignment="Center" />
+					<ComboBox  FontSize="16" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Source={x:Static model:LocationRepository.Instance}, Path=SelectedLocation.StoredFoodItems}" SelectedItem="{Binding Source={x:Static model:LocationRepository.Instance}, Path=SelectedFoodItem}">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="SelectionChanged">
+								<i:InvokeCommandAction Command="{Binding ItemSelectionChangedCommand}" />
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</ComboBox>
+				</StackPanel>
+			</Border>
 
-			<Button Grid.Row="3" Grid.Column="1" Width="100" Margin="10" Content="Save" Command="{Binding SaveCommand}" />
+			<Border Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" CornerRadius="6" BorderThickness="2" BorderBrush="Black" Margin="30,30,30,0" Background="#FFDB58">
+				<StackPanel Orientation="Horizontal" Width="500" Height="Auto" HorizontalAlignment="Center" Margin="10">
+					<Label FontSize="16" Grid.Row="2" Grid.Column="0"  Content="Item Quantity:" VerticalAlignment="Center" />
+					<number:IntegerUpDown FontSize="16" Grid.Row="2" Grid.Column="2" Height="25" Minimum="0" Text="{Binding UpdatedQuantity}" />
+					<Label TextElement.FontSize="24" Content="{Binding QuantityText}" Margin="140, 0,0,0" />
+				</StackPanel>
+			</Border>
 
-			<Label Grid.Row="4" Grid.Column="1" Foreground="Red" TextElement.FontSize="24" TextElement.FontWeight="Bold" Visibility="{Binding ErrorTextVisible, Converter={StaticResource BooleanToVisibilityConverter}}">Please Fill Out All Fields!</Label>
-			<Label Grid.Row="4" Grid.Column="0" TextElement.FontSize="24" Content="{Binding QuantityText}" />
+			<Button Grid.Row="4" Grid.Column="1" Width="100" Height="Auto" FontSize="25" Content="Save" Command="{Binding SaveCommand}" Background="#FFDB58" BorderBrush="Black" BorderThickness="2" Margin="30,30,30,0"/>
+
+			<Border Grid.Row="4" Grid.Column="0" CornerRadius="6" BorderThickness="2" BorderBrush="Black"  Background="#FFDB58" Visibility="{Binding ErrorTextVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="30,30,30,0">
+				<StackPanel Orientation="Horizontal" Width="500" Height="Auto" HorizontalAlignment="Center">
+					<Label Margin="100, 0, 0 ,0" HorizontalAlignment="Center" Foreground="Red" TextElement.FontSize="24" TextElement.FontWeight="Bold" >Please Fill Out All Fields!</Label>
+				</StackPanel>
+			</Border>
 		</Grid>
 	</Grid>
 </UserControl>
