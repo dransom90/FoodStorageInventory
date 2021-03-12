@@ -14,6 +14,6 @@
 	<UserControl.Resources>
 	</UserControl.Resources>
 	<Grid>
-		<Image Source="shelf-1285186_1920.jpg" />
+		<Image Source="shelf-1285186_1920.jpg" Stretch="Fill" />
 	</Grid>
 </UserControl>

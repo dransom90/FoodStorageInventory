@@ -564,6 +564,22 @@
   <ItemGroup>
     <Resource Include="Views\shelf-1285186_1920.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Thank You.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pantry.jpg" />
+    <Resource Include="Images\pantry1.jpg" />
+    <Resource Include="Images\pantry2.jpg" />
+    <Resource Include="Images\pantry3.jpg" />
+    <Resource Include="Images\pantry4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\pantry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\pantry1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -15,48 +15,51 @@
 
 	<UserControl.Resources>
 		<Style x:Key="BorderStyle" TargetType="{x:Type Border}">
-			<Setter Property="BorderBrush" Value="White" />
+			<Setter Property="BorderBrush" Value="Black" />
 			<Setter Property="BorderThickness" Value="2" />
 			<Setter Property="Margin" Value="5" />
-			<Setter Property="Background" Value="LightBlue" />
+			<Setter Property="Background" Value="#FFDB58" />
 			<Setter Property="MaxWidth" Value="400" />
 			<Setter Property="CornerRadius" Value="6" />
 		</Style>
 	</UserControl.Resources>
 
 	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-		</Grid.RowDefinitions>
+		<Image Source="pantry1.jpg" Stretch="UniformToFill" />
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
 
-		<Label Grid.Row="0" HorizontalAlignment="Center" FontSize="20" Foreground="LightBlue">
-			<TextBlock TextDecorations="Underline">REPORTS</TextBlock>
-		</Label>
+			<Label Grid.Row="0" HorizontalAlignment="Center" FontSize="20" Foreground="#FFDB58">
+				<TextBlock TextDecorations="Underline">REPORTS</TextBlock>
+			</Label>
 
-		<Border Grid.Row="1" Style="{DynamicResource BorderStyle}" Visibility="{Binding DisplayNoReports, Converter={StaticResource InverseBoolToVisConverter}}">
-			<Label Content="{Binding NoReports}" FontSize="18" HorizontalAlignment="Center" />
-		</Border>
+			<Border Grid.Row="1" Style="{DynamicResource BorderStyle}" Visibility="{Binding DisplayNoReports, Converter={StaticResource InverseBoolToVisConverter}}">
+				<Label Content="{Binding NoReports}" FontSize="18" HorizontalAlignment="Center" />
+			</Border>
 
-		<Border Grid.Row="2" Style="{DynamicResource BorderStyle}" Visibility="{Binding DisplayFiveOrLess, Converter={StaticResource BooleanToVisibilityConverter}}">
-			<StackPanel>
-				<Label Content="{Binding LowItemReport}" FontSize="18" />
-				<ListBox ItemsSource="{Binding FiveOrLess}" FontSize="14" />
-			</StackPanel>
-		</Border>
+			<Border Grid.Row="2" Style="{DynamicResource BorderStyle}" Visibility="{Binding DisplayFiveOrLess, Converter={StaticResource BooleanToVisibilityConverter}}">
+				<StackPanel>
+					<Label Content="{Binding LowItemReport}" FontSize="18" />
+					<ListBox ItemsSource="{Binding FiveOrLess}" FontSize="14" />
+				</StackPanel>
+			</Border>
 
-		<Border Grid.Row="3" Style="{DynamicResource BorderStyle}" Visibility="{Binding DisplayZeroItems, Converter={StaticResource BooleanToVisibilityConverter}}">
-			<StackPanel>
-				<Label Content="{Binding ZeroItemReport}" Grid.Row="4" FontSize="18" />
-				<ListBox Grid.Row="5" ItemsSource="{Binding ZeroItems}" FontSize="14" />
-			</StackPanel>
-		</Border>
+			<Border Grid.Row="3" Style="{DynamicResource BorderStyle}" Visibility="{Binding DisplayZeroItems, Converter={StaticResource BooleanToVisibilityConverter}}">
+				<StackPanel>
+					<Label Content="{Binding ZeroItemReport}" Grid.Row="4" FontSize="18" />
+					<ListBox Grid.Row="5" ItemsSource="{Binding ZeroItems}" FontSize="14" />
+				</StackPanel>
+			</Border>
+		</Grid>
 	</Grid>
 </UserControl>

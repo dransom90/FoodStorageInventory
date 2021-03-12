@@ -13,7 +13,7 @@
 
 	<Window.Resources>
 		<Style x:Key="NavigationListBoxStyle" TargetType="{x:Type ListBox}">
-			<Setter Property="Background" Value="LightBlue" />
+			<Setter Property="Background" Value="#FFDB58" />
 			<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
 			<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
 			<Setter Property="VerticalContentAlignment" Value="Center" />
@@ -49,8 +49,8 @@
 						</Border>
 						<ControlTemplate.Triggers>
 							<Trigger Property="IsSelected" Value="True">
-								<Setter TargetName="Bd" Property="Background" Value="DimGray" />
-								<Setter Property="Foreground" Value="White" />
+								<Setter TargetName="Bd" Property="Background" Value="White" />
+								<Setter Property="Foreground" Value="Black" />
 							</Trigger>
 							<MultiTrigger>
 								<MultiTrigger.Conditions>
@@ -155,6 +155,6 @@
 				 ItemTemplate="{DynamicResource NavigationDataTemplate}"
 				 ItemsSource="{StaticResource NavigationMenuItems}" />
 
-		<ContentControl Grid.Column="1" Style="{StaticResource NavigationContentStyle}" />
+			<ContentControl Grid.Column="1" Style="{StaticResource NavigationContentStyle}" />
 	</Grid>
 </Window>
