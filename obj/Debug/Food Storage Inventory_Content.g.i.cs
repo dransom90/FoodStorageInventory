@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pantry.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/shelf-1285186_1920.jpg")]
 
 

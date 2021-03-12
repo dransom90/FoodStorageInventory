@@ -1,38 +1,73 @@
+D:\Repositories\FoodStorageInventory\obj\Debug\App.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\MainWindow.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\About.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\Descriptions.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\EditItemsView.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\HomePage.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\HomeView.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewItemPopup.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\GeneralInventoryView.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewLocationWindow.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\ReportsView.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\SearchView.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\App.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory_MarkupCompile.cache
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory_MarkupCompile.lref
 D:\Repositories\FoodStorageInventory\bin\Debug\Food Storage Inventory.exe.config
 D:\Repositories\FoodStorageInventory\bin\Debug\Food Storage Inventory.exe
 D:\Repositories\FoodStorageInventory\bin\Debug\Food Storage Inventory.pdb
+D:\Repositories\FoodStorageInventory\bin\Debug\ControlzEx.xml
 D:\Repositories\FoodStorageInventory\bin\Debug\log4net.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.BootstrapIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.BoxIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Codicons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Core.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Entypo.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.EvaIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.FeatherIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.FileIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Fontaudio.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.FontAwesome.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.ForkAwesome.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Ionicons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.JamIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Material.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.MaterialDesign.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.MaterialLight.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Microns.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Modern.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Octicons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.PicolIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.PixelartIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.RadixIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.RemixIcon.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.RPGAwesome.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.SimpleIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Typicons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Unicons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.VaadinIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.WeatherIcons.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.Zondicons.xml
 D:\Repositories\FoodStorageInventory\bin\Debug\MaterialDesignThemes.Wpf.xml
 D:\Repositories\FoodStorageInventory\bin\Debug\Microsoft.Xaml.Behaviors.xml
 D:\Repositories\FoodStorageInventory\bin\Debug\Newtonsoft.Json.xml
 D:\Repositories\FoodStorageInventory\bin\Debug\Prism.xml
 D:\Repositories\FoodStorageInventory\bin\Debug\Prism.Wpf.xml
 D:\Repositories\FoodStorageInventory\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-D:\Repositories\FoodStorageInventory\obj\Debug\MainWindow.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\About.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\Descriptions.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\EditItems.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\HomePage.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewItemPopup.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\GeneralInventoryWindow.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewLocationWindow.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\ReportsPage.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\SearchWindow.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\App.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory_MarkupCompile.cache
-D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory_MarkupCompile.lref
-D:\Repositories\FoodStorageInventory\obj\Debug\App.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\MainWindow.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\About.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\Descriptions.baml
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\EditItems.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\EditItemsView.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\HomePage.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\HomeView.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewItemPopup.baml
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\GeneralInventoryWindow.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\GeneralInventoryView.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewLocationWindow.baml
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\ReportsPage.baml
-D:\Repositories\FoodStorageInventory\obj\Debug\Views\SearchWindow.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\ReportsView.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\SearchView.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.g.resources
 D:\Repositories\FoodStorageInventory\obj\Debug\Food_Storage_Inventory.Properties.Resources.resources
 D:\Repositories\FoodStorageInventory\obj\Debug\Food_Storage_Inventory.Resources.resources
@@ -42,4 +77,5 @@ D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csproj.Fod
 D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csproj.CopyComplete
 D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.exe
 D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.pdb
-D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csprojAssemblyReference.cache
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\ExitView.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\ExitView.baml
