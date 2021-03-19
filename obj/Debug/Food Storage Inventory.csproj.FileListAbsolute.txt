@@ -77,3 +77,4 @@ D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csproj.Fod
 D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csproj.CopyComplete
 D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.exe
 D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.pdb
+D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.csprojAssemblyReference.cache

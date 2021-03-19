@@ -12,9 +12,9 @@ DEBUG;TRACE
 D:\Repositories\FoodStorageInventory\App.xaml
 111412415846
 
-30-431294803
+311696082504
 1751775017900
 MainWindow.xaml;Views\About.xaml;Views\Descriptions.xaml;Views\EditItemsView.xaml;Views\ExitView.xaml;Views\HomeView.xaml;Views\NewItemPopup.xaml;Views\GeneralInventoryView.xaml;Views\NewLocationWindow.xaml;Views\ReportsView.xaml;Views\SearchView.xaml;
 
-False
+True
 

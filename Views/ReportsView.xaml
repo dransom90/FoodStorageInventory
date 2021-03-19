@@ -39,7 +39,7 @@
 				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 
-			<Label Grid.Row="0" HorizontalAlignment="Center" FontSize="20" Foreground="#FFDB58">
+			<Label Grid.Row="0" HorizontalAlignment="Center" FontSize="20" Foreground="Black">
 				<TextBlock TextDecorations="Underline">REPORTS</TextBlock>
 			</Label>
 

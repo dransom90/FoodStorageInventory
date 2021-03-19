@@ -6,6 +6,7 @@
 				xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
 		xmlns:System="clr-namespace:System;assembly=mscorlib"
 		xmlns:views="clr-namespace:Food_Storage_Inventory.Views"
+		xmlns:gui="clr-namespace:Food_Storage_Inventory.GuiHelps"
 		mc:Ignorable="d"
 		Title="Food Storage Inventory"
 		Height="450" Width="800"
@@ -155,6 +156,6 @@
 				 ItemTemplate="{DynamicResource NavigationDataTemplate}"
 				 ItemsSource="{StaticResource NavigationMenuItems}" />
 
-			<ContentControl Grid.Column="1" Style="{StaticResource NavigationContentStyle}" />
+		<ContentControl Grid.Column="1" Style="{StaticResource NavigationContentStyle}" />
 	</Grid>
 </Window>

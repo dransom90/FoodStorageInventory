@@ -20,28 +20,30 @@
 			<Setter Property="BorderThickness" Value="2" />
 		</Style>
 	</UserControl.Resources>
-
-	<StackPanel Orientation="Vertical" Margin="10">
-		<Border Style="{DynamicResource RoundedBorder}" Margin="5, 5, 100, 5" Background="#f4ff58">
-			<TextBox FontSize="20"  x:Name="SearchBar" Height="37" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Search Here" TextAlignment="Left" VerticalContentAlignment="Center" />
-		</Border>
-		<TreeView Name="treeView" ItemsSource="{Binding SearchResults}" Grid.Row="1" Grid.ColumnSpan="2">
-			<TreeView.Resources>
-				<HierarchicalDataTemplate DataType="{x:Type model:Location}" ItemsSource="{Binding StoredFoodItems}">
-					<Border Style="{DynamicResource RoundedBorder}" Margin="10" Background="#FFDB58">
-						<StackPanel Orientation="Horizontal" Height="30">
-							<TextBlock Text="{Binding Name}" VerticalAlignment="Center" Margin="5" FontSize="16" />
-						</StackPanel>
-					</Border>
-				</HierarchicalDataTemplate>
-				<DataTemplate DataType="{x:Type model:FoodItem}">
-					<Border Style="{DynamicResource RoundedBorder}" Background="#ffb158">
-						<StackPanel Orientation="Horizontal">
-							<TextBlock Text="{Binding Overview}" Margin="5" FontSize="15" />
-						</StackPanel>
-					</Border>
-				</DataTemplate>
-			</TreeView.Resources>
-		</TreeView>
-	</StackPanel>
+	<Grid>
+		<Image Source="pantry3.jpg" Stretch="UniformToFill" />
+		<StackPanel Orientation="Vertical" Margin="10">
+			<Border Style="{DynamicResource RoundedBorder}" Margin="5, 5, 100, 5" Background="#f4ff58">
+				<TextBox FontSize="20"  x:Name="SearchBar" Height="37" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Search Here" TextAlignment="Left" VerticalContentAlignment="Center" />
+			</Border>
+			<TreeView Name="treeView" ItemsSource="{Binding SearchResults}" Grid.Row="1" Grid.ColumnSpan="2">
+				<TreeView.Resources>
+					<HierarchicalDataTemplate DataType="{x:Type model:Location}" ItemsSource="{Binding StoredFoodItems}">
+						<Border Style="{DynamicResource RoundedBorder}" Margin="10" Background="#FFDB58">
+							<StackPanel Orientation="Horizontal" Height="30">
+								<TextBlock Text="{Binding Name}" VerticalAlignment="Center" Margin="5" FontSize="16" />
+							</StackPanel>
+						</Border>
+					</HierarchicalDataTemplate>
+					<DataTemplate DataType="{x:Type model:FoodItem}">
+						<Border Style="{DynamicResource RoundedBorder}" Background="#ffb158">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="{Binding Overview}" Margin="5" FontSize="15" />
+							</StackPanel>
+						</Border>
+					</DataTemplate>
+				</TreeView.Resources>
+			</TreeView>
+		</StackPanel>
+	</Grid>
 </UserControl>
