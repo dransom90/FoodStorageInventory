@@ -15,6 +15,7 @@
 	</UserControl.DataContext>
 
 	<Grid>
+		<Image Source="pantry.jpg" Stretch="Fill" />
 		<TreeView Name="treeView" ItemsSource="{Binding Source={x:Static model:LocationRepository.Instance}, Path=VisibleLocations}" Grid.Row="1" Grid.ColumnSpan="2">
 			<TreeView.Resources>
 

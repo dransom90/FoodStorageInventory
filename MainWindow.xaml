@@ -78,19 +78,22 @@
 					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularHomeAlt" />
 				</DataTrigger>
 				<DataTrigger Binding="{Binding}" Value="Reports">
-					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularInfoCircle " />
+					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularSpreadsheet " />
 				</DataTrigger>
 				<DataTrigger Binding="{Binding}" Value="Search">
 					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularSearch" />
 				</DataTrigger>
 				<DataTrigger Binding="{Binding}" Value="Inventory">
-					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularPoll" />
+					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularListCheck" />
 				</DataTrigger>
 				<DataTrigger Binding="{Binding}" Value="Edit">
 					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularPencil" />
 				</DataTrigger>
 				<DataTrigger Binding="{Binding}" Value="Exit">
 					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularExit" />
+				</DataTrigger>
+				<DataTrigger Binding="{Binding}" Value="About">
+					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularInfoCircle" />
 				</DataTrigger>
 			</DataTemplate.Triggers>
 		</DataTemplate>
@@ -101,6 +104,7 @@
 			<System:String>Search</System:String>
 			<System:String>Inventory</System:String>
 			<System:String>Edit</System:String>
+			<System:String>About</System:String>
 			<System:String>Exit</System:String>
 		</x:Array>
 
@@ -118,6 +122,9 @@
 		</DataTemplate>
 		<DataTemplate x:Key="EditViewTemplate">
 			<views:EditItemsView />
+		</DataTemplate>
+		<DataTemplate x:Key="AboutViewTemplate">
+			<views:About />
 		</DataTemplate>
 		<DataTemplate x:Key="ExitViewTemplate">
 			<views:ExitView />
@@ -137,6 +144,9 @@
 				</DataTrigger>
 				<DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" Value="Edit">
 					<Setter Property="ContentTemplate" Value="{StaticResource EditViewTemplate}" />
+				</DataTrigger>
+				<DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" Value="About">
+					<Setter Property="ContentTemplate" Value="{StaticResource AboutViewTemplate}" />
 				</DataTrigger>
 				<DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" Value="Exit">
 					<Setter Property="ContentTemplate" Value="{StaticResource ExitViewTemplate}" />
