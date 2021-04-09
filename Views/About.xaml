@@ -3,7 +3,7 @@
 	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-			 xmlns:gui="clr-namespace:Food_Storage_Inventory.GuiHelps"
+	xmlns:gui="clr-namespace:Food_Storage_Inventory.GuiHelps"
 	xmlns:VM="clr-namespace:Food_Storage_Inventory.ViewModel"
 	  xmlns:local="clr-namespace:Food_Storage_Inventory.Views"
 	  mc:Ignorable="d"
@@ -15,6 +15,15 @@
 	</UserControl.DataContext>
 
 	<UserControl.Resources>
+		<Style x:Key="BorderStyle" TargetType="{x:Type Border}">
+			<Setter Property="BorderBrush" Value="Black" />
+			<Setter Property="BorderThickness" Value="2" />
+			<Setter Property="Margin" Value="5" />
+			<Setter Property="Background" Value="Orange" />
+			<Setter Property="MaxWidth" Value="400" />
+			<Setter Property="CornerRadius" Value="6" />
+			<Setter Property="Height" Value="300"/>
+		</Style>
 	</UserControl.Resources>
 
 	<Grid>
