@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Food_Storage_Inventory.Views
 {
@@ -29,7 +19,7 @@ namespace Food_Storage_Inventory.Views
 		{
 			var tomorrow = DateTime.Now.AddDays(1);
 			var forever = tomorrow.AddYears(1000);
-
+			datePicker.SelectedDate = DateTime.Now;
 			datePicker.BlackoutDates.Add(new CalendarDateRange(tomorrow, forever));
 		}
 	}

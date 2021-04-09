@@ -9,7 +9,9 @@
 		xmlns:number="http://schemas.xceed.com/wpf/xaml/toolkit"
 		xmlns:sys="clr-namespace:System;assembly=mscorlib"
 		mc:Ignorable="d"
-		Title="Add New Item" Height="450" Width="800">
+		ResizeMode="CanResizeWithGrip"
+		Title="Add New Item" Height="450" Width="800"
+		Background="#FFDB58">
 
 	<Window.DataContext>
 		<VM:NewItemViewModel />
@@ -28,6 +30,13 @@
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
+
+		<!--<Grid.Background>
+			<LinearGradientBrush EndPoint="1, 1" StartPoint="0, 0">
+				<GradientStop Color="#F4FF58" Offset="0" />
+				<GradientStop Color="#FFDB58" Offset="0.5" />
+			</LinearGradientBrush>
+		</Grid.Background>-->
 
 		<Label Name="newItemNameLabel" Grid.Row="0" Grid.Column="0" Margin="10">Item Name:</Label>
 		<TextBox Name="newItemNameInput" Grid.Column="1" Grid.Row="0" Margin="10" MinWidth="250" Text="{Binding NewItemName, Mode=TwoWay}"></TextBox>

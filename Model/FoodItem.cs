@@ -5,7 +5,7 @@ namespace Food_Storage_Inventory.Model
 	public class FoodItem
 	{
 		private string _name { get; set; }
-		public string Name { get => ToString(); }
+		public string DisplayName { get => ToString(); }
 		public int Quantity { get; set; }
 		public string Container { get; set; }
 		public DateTime Date { get; set; }
@@ -14,7 +14,15 @@ namespace Food_Storage_Inventory.Model
 
 		public string Overview => $"({Quantity}): {_name}, {Container}, {DisplayDate}";
 
-		public override string ToString() => $"{_name}";
+		public override string ToString()
+		{
+			if (_name.Contains(Location.DEFAULT_FOOD_ITEM))
+			{
+				return _name;
+			}
+
+			return $"{_name} - {Container}";
+		}
 
 		public override bool Equals(object other)
 		{
@@ -23,7 +31,7 @@ namespace Food_Storage_Inventory.Model
 
 			if (other is FoodItem item)
 			{
-				return Name == item.Name && Container == item.Container;
+				return DisplayName == item.DisplayName && Container == item.Container;
 			}
 
 			return false;
@@ -32,7 +40,7 @@ namespace Food_Storage_Inventory.Model
 		public override int GetHashCode()
 		{
 			var hashcode = 5649871;
-			hashcode = hashcode * -5649977 + Name.GetHashCode();
+			hashcode = hashcode * -5649977 + DisplayName.GetHashCode();
 			hashcode = hashcode * -5649977 + Container.GetHashCode();
 			return hashcode;
 		}

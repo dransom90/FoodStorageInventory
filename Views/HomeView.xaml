@@ -21,7 +21,7 @@
 			<RowDefinition />
 		</Grid.RowDefinitions>
 		<Image Source="shelf-1285186_1920.jpg" Stretch="Fill" Grid.RowSpan="3" />
-		<gui:OutlinedTextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Application Title" FontFamily="Cambria" FontSize="40" FontWeight="ExtraBold" TextWrapping="Wrap" Stroke="Black" Fill="#FFDB58" />
+		<gui:OutlinedTextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Food Inventory" FontFamily="Cambria" FontSize="50" FontWeight="ExtraBold" TextWrapping="Wrap" Stroke="Black" Fill="#FFDB58" />
 		<gui:OutlinedTextBlock Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="v2.0" FontFamily="Cambria" FontSize="40" TextWrapping="Wrap" Stroke="Black" Fill="#FFDB58" />
 	</Grid>
 </UserControl>

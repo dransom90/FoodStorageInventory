@@ -145,7 +145,7 @@ namespace Food_Storage_Inventory.ViewModel
 
 		private void RunNewItem()
 		{
-			if (LocationRepository.Instance.SelectedFoodItem.Name == Location.DEFAULT_FOOD_ITEM)
+			if (LocationRepository.Instance.SelectedFoodItem.DisplayName.Contains(Location.DEFAULT_FOOD_ITEM))
 			{
 				NewItemPopup newItemPopup = new NewItemPopup();
 				newItemPopup.Show();

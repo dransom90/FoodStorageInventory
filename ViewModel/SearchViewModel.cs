@@ -32,7 +32,7 @@ namespace Food_Storage_Inventory.ViewModel
 
 			foreach (Location location in LocationRepository.Instance.Locations.Where(x => x.Visible))
 			{
-				var validFoodItems = location.ValidFoodItems.Where(x => x.Name.ToLowerInvariant().Contains(lowerText));
+				var validFoodItems = location.ValidFoodItems.Where(x => x.DisplayName.ToLowerInvariant().Contains(lowerText));
 				Location newLocation = new Location(location.Name, true) { StoredFoodItems = new ObservableCollection<FoodItem>(validFoodItems) };
 				SearchResults.Add(newLocation);
 			}

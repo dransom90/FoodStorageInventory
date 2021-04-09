@@ -31,8 +31,8 @@
 					<Border CornerRadius="6" BorderBrush="Black" Background="#ffb158" BorderThickness="2">
 						<StackPanel Orientation="Horizontal">
 							<TextBlock Text="{Binding Quantity}" Margin="5" FontSize="15" VerticalAlignment="Center" />
-							<TextBlock x:Name="Item" Text="{Binding Name}" Margin="5" FontSize="15" VerticalAlignment="Center" />
-							<TextBlock Text="{Binding Container}" Margin="5" FontSize="15" VerticalAlignment="Center" />
+							<TextBlock x:Name="Item" Text="{Binding DisplayName}" Margin="5" FontSize="15" VerticalAlignment="Center" />
+							<!--<TextBlock Text="{Binding Container}" Margin="5" FontSize="15" VerticalAlignment="Center" />-->
 							<TextBlock Text="{Binding Date}" Margin="5" FontSize="15" VerticalAlignment="Center" />
 							<number:UIntegerUpDown Text="{Binding Quantity}" Margin="5" Minimum="0" ValueChanged="UIntegerUpDown_ValueChanged" FontSize="15" />
 							<DatePicker DisplayDateStart="2020-01-01" SelectedDate="{Binding Date}" Margin="5" SelectedDateChanged="DatePicker_SelectedDateChanged"></DatePicker>

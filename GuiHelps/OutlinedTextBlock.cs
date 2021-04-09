@@ -234,7 +234,8 @@ namespace Food_Storage_Inventory.GuiHelps
 				FlowDirection,
 				new Typeface(FontFamily, FontStyle, FontWeight, FontStretches.Normal),
 				FontSize,
-				Brushes.Black);
+				Brushes.Black,
+				VisualTreeHelper.GetDpi(this).PixelsPerDip);
 
 			UpdateFormattedText();
 		}

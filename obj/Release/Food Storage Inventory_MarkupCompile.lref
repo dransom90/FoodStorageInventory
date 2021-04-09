@@ -1,12 +1,14 @@
 ﻿
 
+FD:\Repositories\FoodStorageInventory\MainWindow.xaml;;
 FD:\Repositories\FoodStorageInventory\Views\About.xaml;;
 FD:\Repositories\FoodStorageInventory\Views\Descriptions.xaml;;
-FD:\Repositories\FoodStorageInventory\Views\EditItems.xaml;;
-FD:\Repositories\FoodStorageInventory\Views\HomePage.xaml;;
+FD:\Repositories\FoodStorageInventory\Views\EditItemsView.xaml;;
+FD:\Repositories\FoodStorageInventory\Views\ExitView.xaml;;
+FD:\Repositories\FoodStorageInventory\Views\HomeView.xaml;;
 FD:\Repositories\FoodStorageInventory\Views\NewItemPopup.xaml;;
-FD:\Repositories\FoodStorageInventory\Views\GeneralInventoryWindow.xaml;;
+FD:\Repositories\FoodStorageInventory\Views\GeneralInventoryView.xaml;;
 FD:\Repositories\FoodStorageInventory\Views\NewLocationWindow.xaml;;
-FD:\Repositories\FoodStorageInventory\Views\ReportsPage.xaml;;
-FD:\Repositories\FoodStorageInventory\Views\SearchWindow.xaml;;
+FD:\Repositories\FoodStorageInventory\Views\ReportsView.xaml;;
+FD:\Repositories\FoodStorageInventory\Views\SearchView.xaml;;
 

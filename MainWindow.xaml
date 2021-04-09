@@ -89,11 +89,14 @@
 				<DataTrigger Binding="{Binding}" Value="Edit">
 					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularPencil" />
 				</DataTrigger>
-				<DataTrigger Binding="{Binding}" Value="Exit">
-					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularExit" />
-				</DataTrigger>
 				<DataTrigger Binding="{Binding}" Value="About">
 					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularInfoCircle" />
+				</DataTrigger>
+				<DataTrigger Binding="{Binding}" Value="Sync">
+					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularSync" />
+				</DataTrigger>
+				<DataTrigger Binding="{Binding}" Value="Exit">
+					<Setter TargetName="MenuItemIcon" Property="Kind" Value="RegularExit" />
 				</DataTrigger>
 			</DataTemplate.Triggers>
 		</DataTemplate>
@@ -105,6 +108,7 @@
 			<System:String>Inventory</System:String>
 			<System:String>Edit</System:String>
 			<System:String>About</System:String>
+			<System:String>Sync</System:String>
 			<System:String>Exit</System:String>
 		</x:Array>
 
@@ -126,8 +130,13 @@
 		<DataTemplate x:Key="AboutViewTemplate">
 			<views:About />
 		</DataTemplate>
+		<DataTemplate x:Key="BackupTemplate">
+			<views:About />
+		</DataTemplate>
+		<DataTemplate x:Key="SyncTemplate">
+			<views:SyncView />
+		</DataTemplate>
 		<DataTemplate x:Key="ExitViewTemplate">
-			<views:ExitView />
 		</DataTemplate>
 
 		<Style x:Key="NavigationContentStyle" TargetType="ContentControl">
@@ -147,6 +156,9 @@
 				</DataTrigger>
 				<DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" Value="About">
 					<Setter Property="ContentTemplate" Value="{StaticResource AboutViewTemplate}" />
+				</DataTrigger>
+				<DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" Value="Sync">
+					<Setter Property="ContentTemplate" Value="{StaticResource SyncTemplate}" />
 				</DataTrigger>
 				<DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" Value="Exit">
 					<Setter Property="ContentTemplate" Value="{StaticResource ExitViewTemplate}" />

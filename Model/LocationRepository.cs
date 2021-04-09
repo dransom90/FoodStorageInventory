@@ -14,7 +14,7 @@ namespace Food_Storage_Inventory.Model
 		private static readonly ILog _logger = LogManager.GetLogger(typeof(LocationRepository));
 
 		private const string DIRECTORY = @"C:\Program Files\Food Storage Inventory";
-		private const string FILE_PATH = @"C:\Program Files\Food Storage Inventory\locations.json";
+		private const string FILE_PATH = @"C:\Program Files\Food Storage Inventory\Food Storage Inventory Location Data.json";
 		public const string DEFAULT_ENTRY = "Create A New Location";
 
 		public static LocationRepository Instance = lazy.Value;
@@ -102,6 +102,36 @@ namespace Food_Storage_Inventory.Model
 			{
 				_logger.Error("Failed to write JSON file", ex);
 				return false;
+			}
+		}
+
+		public bool BackupLocations()
+		{
+			var json = JsonConvert.SerializeObject(Locations);
+			return Ftp.UploadFile(json);
+		}
+
+		public bool LoadFromBackup()
+		{
+			var json = Ftp.DownloadFile();
+			if (string.IsNullOrEmpty(json))
+			{
+				_logger.Error("Failed to read JSON file.  Creating empty collection.");
+				Locations = new ObservableCollection<Location>()
+				{
+					new Location(DEFAULT_ENTRY, false),
+					new Location("None", true)
+				};
+
+				SaveToFile();
+
+				return false;
+			}
+			else
+			{
+				Locations = JsonConvert.DeserializeObject<ObservableCollection<Location>>(json);
+				SaveToFile();
+				return true;
 			}
 		}
 

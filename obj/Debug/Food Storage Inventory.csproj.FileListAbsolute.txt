@@ -1,7 +1,13 @@
+D:\Repositories\FoodStorageInventory\bin\Debug\credentials.json
+D:\Repositories\FoodStorageInventory\bin\Debug\log4net.config
 D:\Repositories\FoodStorageInventory\bin\Debug\Food Storage Inventory.exe.config
 D:\Repositories\FoodStorageInventory\bin\Debug\Food Storage Inventory.exe
 D:\Repositories\FoodStorageInventory\bin\Debug\Food Storage Inventory.pdb
 D:\Repositories\FoodStorageInventory\bin\Debug\ControlzEx.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\Google.Apis.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\Google.Apis.Auth.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\Google.Apis.Core.xml
+D:\Repositories\FoodStorageInventory\bin\Debug\Google.Apis.Drive.v3.xml
 D:\Repositories\FoodStorageInventory\bin\Debug\log4net.xml
 D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.xml
 D:\Repositories\FoodStorageInventory\bin\Debug\MahApps.Metro.IconPacks.xml
@@ -53,6 +59,7 @@ D:\Repositories\FoodStorageInventory\obj\Debug\Views\GeneralInventoryView.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewLocationWindow.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\ReportsView.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\SearchView.g.cs
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\SyncView.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\App.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory_MarkupCompile.cache
@@ -68,6 +75,7 @@ D:\Repositories\FoodStorageInventory\obj\Debug\Views\GeneralInventoryView.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\NewLocationWindow.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\ReportsView.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Views\SearchView.baml
+D:\Repositories\FoodStorageInventory\obj\Debug\Views\SyncView.baml
 D:\Repositories\FoodStorageInventory\obj\Debug\Food Storage Inventory.g.resources
 D:\Repositories\FoodStorageInventory\obj\Debug\Food_Storage_Inventory.Properties.Resources.resources
 D:\Repositories\FoodStorageInventory\obj\Debug\Food_Storage_Inventory.Resources.resources

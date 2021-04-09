@@ -127,7 +127,7 @@ namespace Food_Storage_Inventory.ViewModel
 				return;
 			}
 
-			var results = LocationRepository.Instance.SelectedLocation.StoredFoodItems.Where(x => x.Name == NewItemName);
+			var results = LocationRepository.Instance.SelectedLocation.StoredFoodItems.Where(x => x.DisplayName == $"{NewItemName} - {SelectedContainer}");
 			if (results.Any())
 			{
 				UpdateFeedbackText("Item Already Exists!");

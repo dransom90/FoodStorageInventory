@@ -34,7 +34,7 @@ namespace Food_Storage_Inventory.Model
 				};
 			}
 
-			var names = StoredFoodItems.Where(x => x.Name == DEFAULT_FOOD_ITEM);
+			var names = StoredFoodItems.Where(x => x.DisplayName == DEFAULT_FOOD_ITEM);
 
 			if (!names.Any())
 			{
