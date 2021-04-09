@@ -121,6 +121,12 @@ namespace Food_Storage_Inventory.ViewModel
 
 		private void OnNewItemExecuted(object context)
 		{
+			if (string.IsNullOrWhiteSpace(NewItemName) || string.IsNullOrWhiteSpace(NewItemQuantity))
+			{
+				UpdateFeedbackText("Please Fill Out All Fields");
+				return;
+			}
+
 			if (LocationRepository.Instance.SelectedLocation is null && !LocationRepository.Instance.SelectedLocation.StoredFoodItems.Any())
 			{
 				UpdateFeedbackText("Please Fill Out All Fields");

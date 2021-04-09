@@ -10,12 +10,37 @@
 		xmlns:sys="clr-namespace:System;assembly=mscorlib"
 		mc:Ignorable="d"
 		ResizeMode="CanResizeWithGrip"
-		Title="Add New Item" Height="450" Width="800"
+		Title="Add New Item" Height="400" Width="500"
 		Background="#FFDB58">
 
 	<Window.DataContext>
 		<VM:NewItemViewModel />
 	</Window.DataContext>
+
+	<Window.Resources>
+		<Style x:Key="BorderStyle" TargetType="{x:Type Border}">
+			<Setter Property="BorderBrush" Value="Black" />
+			<Setter Property="BorderThickness" Value="2" />
+			<Setter Property="Margin" Value="5" />
+			<Setter Property="Background" Value="#FFB158" />
+			<Setter Property="MaxWidth" Value="400" />
+			<Setter Property="CornerRadius" Value="6" />
+			<Setter Property="Width" Value="350" />
+		</Style>
+
+		<Style TargetType="Button" x:Key="RoundedButton">
+			<Setter Property="BorderBrush" Value="Black" />
+			<Setter Property="BorderThickness" Value="2" />
+			<Setter Property="Margin" Value="5" />
+			<Setter Property="Height" Value="40"/>
+			<Setter Property="Background" Value="#FFB158" />
+			<Style.Resources>
+				<Style TargetType="Border">
+					<Setter Property="CornerRadius" Value="6" />
+				</Style>
+			</Style.Resources>
+		</Style>
+	</Window.Resources>
 
 	<Grid Margin="15">
 		<Grid.ColumnDefinitions>
@@ -31,31 +56,40 @@
 			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 
-		<!--<Grid.Background>
-			<LinearGradientBrush EndPoint="1, 1" StartPoint="0, 0">
-				<GradientStop Color="#F4FF58" Offset="0" />
-				<GradientStop Color="#FFDB58" Offset="0.5" />
-			</LinearGradientBrush>
-		</Grid.Background>-->
+		<Border HorizontalAlignment="Center" Style="{StaticResource BorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+			<StackPanel Orientation="Horizontal">
+				<Label Name="newItemNameLabel" FontWeight="Bold" Margin="10">Item Name:</Label>
+				<TextBox Name="newItemNameInput" Margin="10" MinWidth="200" Text="{Binding NewItemName, Mode=TwoWay}"></TextBox>
+			</StackPanel>
+		</Border>
 
-		<Label Name="newItemNameLabel" Grid.Row="0" Grid.Column="0" Margin="10">Item Name:</Label>
-		<TextBox Name="newItemNameInput" Grid.Column="1" Grid.Row="0" Margin="10" MinWidth="250" Text="{Binding NewItemName, Mode=TwoWay}"></TextBox>
+		<Border HorizontalAlignment="Center" Style="{StaticResource BorderStyle}" Grid.Row="1" Grid.ColumnSpan="2">
+			<StackPanel Orientation="Horizontal">
+				<Label Name="newItemQuantityLabel" FontWeight="Bold" Margin="10">Item Quanity:</Label>
+				<number:IntegerUpDown Background="#F4FF58" FontWeight="Bold" Height="25" Width="100" Margin="10" Minimum="0" Text="{Binding NewItemQuantity}" />
+			</StackPanel>
+		</Border>
 
-		<Label Name="newItemQuantityLabel" Grid.Row="1" Grid.Column="0" Margin="10">Item Quanity:</Label>
-		<number:IntegerUpDown Grid.Row="1" Grid.Column="2" Height="25" Margin="10" Minimum="0" Text="{Binding NewItemQuantity}" />
+		<Border HorizontalAlignment="Center" Style="{StaticResource BorderStyle}" Grid.Row="2" Grid.ColumnSpan="2">
+			<StackPanel Orientation="Horizontal">
+				<Label Grid.Row="2" Grid.Column="0" Margin="10" FontWeight="Bold">Item Container:</Label>
+				<ComboBox Grid.Row="2" Grid.Column="1" Margin="10" ItemsSource="{Binding AvailableContainers}" SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SelectedContainer, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="-- Select A Container --" Focusable="True"></ComboBox>
+			</StackPanel>
+		</Border>
 
-		<Label Grid.Row="2" Grid.Column="0" Margin="10">Item Container:</Label>
-		<ComboBox Grid.Row="2" Grid.Column="1" Margin="10" ItemsSource="{Binding AvailableContainers}" SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SelectedContainer, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="-- Select A Container --" Focusable="True"></ComboBox>
-
-		<Label Grid.Row="3" Grid.Column="0" Margin="10">Date</Label>
-		<DatePicker x:Name="datePicker" Grid.Row="3" Grid.Column="1" Margin="42,26,0,0" Height="25" HorizontalAlignment="Left" Width="115" SelectedDate="{Binding SelectedDate}"></DatePicker>
+		<Border HorizontalAlignment="Center" Style="{StaticResource BorderStyle}" Grid.Row="3" Grid.ColumnSpan="2">
+			<StackPanel Orientation="Horizontal">
+				<Label Grid.Row="3" Grid.Column="0" Margin="10" FontWeight="Bold">Date</Label>
+				<DatePicker x:Name="datePicker" Grid.Row="3" Grid.Column="1" Margin="42,0,0,5" Height="25" HorizontalAlignment="Left" Width="115" SelectedDate="{Binding SelectedDate}"></DatePicker>
+			</StackPanel>
+		</Border>
 
 		<WrapPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0, 15, 0, 0">
-			<Button IsDefault="True" Name="addNewBtn" Command="{Binding AddNewItemCommand}" MinWidth="60" Margin="0,0,10,0">Add</Button>
-			<Button IsCancel="True" MinWidth="60" Command="{Binding CancelNewItemCommand}" CommandParameter="{Binding ElementName=NewItemPopupWindow}">_Cancel</Button>
+			<Button Style="{StaticResource RoundedButton}" IsDefault="True" Name="addNewBtn" Command="{Binding AddNewItemCommand}" MinWidth="60" Margin="0,0,10,0">Add</Button>
+			<Button Style="{StaticResource RoundedButton}" IsCancel="True" MinWidth="60" Command="{Binding CancelNewItemCommand}" CommandParameter="{Binding ElementName=NewItemPopupWindow}">_Cancel</Button>
 		</WrapPanel>
 
-		<Label Name="feedbackLabel" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Height="25" Margin="10" TextElement.Foreground="Red"  Content="{Binding FeedbackText}" />
+		<Label Name="feedbackLabel" FontWeight="Bold" FontSize="14" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Height="25" Margin="10,0,0,0" TextElement.Foreground="Black"  Content="{Binding FeedbackText}" />
 
 		<Grid x:Name="ContainerInput" Grid.Row="5" Grid.Column="0" Visibility="{Binding InputDialogVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
 			<Grid Background="Black" Opacity="0.5" />

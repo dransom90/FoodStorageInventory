@@ -4,11 +4,11 @@ namespace Food_Storage_Inventory.Model
 {
 	public class FoodItem
 	{
-		private string _name { get; set; }
+		private string _name { get; set; } = string.Empty;
 		public string DisplayName { get => ToString(); }
 		public int Quantity { get; set; }
-		public string Container { get; set; }
-		public DateTime Date { get; set; }
+		public string Container { get; set; } = string.Empty;
+		public DateTime Date { get; set; } = DateTime.Now;
 		public bool Visible { get; private set; }
 		public string DisplayDate => Date.ToShortDateString();
 

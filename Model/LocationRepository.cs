@@ -53,6 +53,7 @@ namespace Food_Storage_Inventory.Model
 
 		private LocationRepository()
 		{
+			Locations = new ObservableCollection<Location>();
 			_ = ReadFromFile();
 		}
 
