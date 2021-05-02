@@ -578,9 +578,7 @@
   <ItemGroup>
     <Resource Include="Images\square.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Views\square.png" />
   </ItemGroup>
