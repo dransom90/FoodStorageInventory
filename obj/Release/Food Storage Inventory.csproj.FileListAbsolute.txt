@@ -84,3 +84,5 @@ D:\Repositories\FoodStorageInventory\bin\Release\Google.Apis.Auth.xml
 D:\Repositories\FoodStorageInventory\bin\Release\Google.Apis.Core.xml
 D:\Repositories\FoodStorageInventory\bin\Release\Google.Apis.Drive.v3.xml
 D:\Repositories\FoodStorageInventory\bin\Release\log4net.config
+D:\Repositories\FoodStorageInventory\obj\Release\Views\SyncView.g.cs
+D:\Repositories\FoodStorageInventory\obj\Release\Views\SyncView.baml
